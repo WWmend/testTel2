@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integram — Вход</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    body { background:#f5f5f5; }
+    .login-wrap { max-width:380px; margin:80px auto; }
+    .card { border:1px solid #dee2e6; }
+    .card-header { background:#fff; }
+    .brand-img { width:36px; }
+  </style>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="text-center mb-3">
+    <img src="/i/lamp.png" class="brand-img" onerror="this.style.display='none'">
+    <h4 class="mt-2">Integram</h4>
+  </div>
+  <div class="card shadow-sm">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item"><a class="nav-link active" href="#" id="tab-login-btn" onclick="switchTab('login');return false;">Вход</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="tab-reg-btn" onclick="switchTab('reg');return false;">Регистрация</a></li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <div id="alert-box" class="alert" style="display:none"></div>
+
+      <div id="tab-login">
+        <div class="form-group">
+          <label>База данных</label>
+          <input id="l-db" class="form-control" placeholder="mydb" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Логин</label>
+          <input id="l-login" class="form-control" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input id="l-pwd" class="form-control" type="password" autocomplete="current-password">
+        </div>
+        <button class="btn btn-primary btn-block" id="login-btn" onclick="doLogin()">Войти</button>
+      </div>
+
+      <div id="tab-reg" style="display:none">
+        <div class="form-group">
+          <label>База данных</label>
+          <input id="r-db" class="form-control" placeholder="mydb" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Логин</label>
+          <input id="r-login" class="form-control" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input id="r-pwd" class="form-control" type="password" autocomplete="new-password">
+        </div>
+        <button class="btn btn-success btn-block" onclick="doRegister()">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <small class="text-muted"><a href="dict.html?db=" id="to-dict" class="text-muted">Вернуться к таблицам</a></small>
+  </div>
+</div>
+
+<script>
+var p = new URLSearchParams(location.search);
+var dbParam = p.get('db') || '';
+if (dbParam) {
+  $('#l-db,#r-db').val(dbParam);
+  document.getElementById('to-dict').href = 'dict.html?db='+encodeURIComponent(dbParam);
+}
+
+function switchTab(tab) {
+  $('#tab-login,#tab-reg').hide();
+  $('#tab-'+tab).show();
+  $('#tab-login-btn,#tab-reg-btn').removeClass('active');
+  $('#tab-'+tab+'-btn').addClass('active');
+  $('#alert-box').hide();
+}
+
+function showAlert(msg, type) {
+  $('#alert-box').removeClass('alert-danger alert-success alert-warning')
+    .addClass('alert-'+(type||'danger')).text(msg).show();
+}
+
+function doLogin() {
+  var db    = $('#l-db').val().trim();
+  var login = $('#l-login').val().trim();
+  var pwd   = $('#l-pwd').val();
+  if (!db || !login || !pwd) return showAlert('Заполните все поля');
+
+  var btn = document.getElementById('login-btn');
+  btn.disabled = true; btn.textContent = '...';
+
+  $.post('/'+db+'/auth?JSON', {login: login, pwd: pwd})
+    .done(function(r) {
+      btn.disabled = false; btn.textContent = 'Войти';
+      if (!r.token) return showAlert(r.msg || 'Неверный логин или пароль');
+      // store session
+      localStorage.setItem(db+'_token', r.token);
+      localStorage.setItem(db+'_xsrf',  r._xsrf || r.xsrf || '');
+      localStorage.setItem(db+'_userId', r.id || r.user_id || '');
+      localStorage.setItem(db+'_user',  r.user || login);
+      localStorage.setItem('_db', db);
+      // set cookie for server-side auth (legacy compat)
+      document.cookie = db+'_token='+encodeURIComponent(r.token)+';path=/;SameSite=Lax';
+      document.cookie = db+'='+encodeURIComponent(r.token)+';path=/;SameSite=Lax';
+      // redirect
+      location.href = 'main.html?db='+encodeURIComponent(db);
+    })
+    .fail(function(xhr) {
+      btn.disabled = false; btn.textContent = 'Войти';
+      var msg = 'Ошибка';
+      try { var j=JSON.parse(xhr.responseText); msg=j.error||j.msg||msg; } catch(e){}
+      showAlert(msg);
+    });
+}
+
+function doRegister() {
+  var db    = $('#r-db').val().trim();
+  var login = $('#r-login').val().trim();
+  var pwd   = $('#r-pwd').val();
+  if (!db || !login || !pwd) return showAlert('Заполните все поля');
+  $.post('/my/register?JSON', {db: db, login: login, pwd: pwd})
+    .done(function(r) {
+      if (r.error) return showAlert(r.error);
+      showAlert('Готово! Теперь войдите.', 'success');
+      switchTab('login');
+      $('#l-db').val(db); $('#l-login').val(login);
+    })
+    .fail(function(xhr) {
+      var msg='Ошибка';
+      try{var j=JSON.parse(xhr.responseText);msg=j.error||j.msg||msg;}catch(e){}
+      showAlert(msg);
+    });
+}
+
+$('#l-pwd').keypress(function(e){ if(e.which===13) doLogin(); });
+$('#r-pwd').keypress(function(e){ if(e.which===13) doRegister(); });
+$('#l-login').keypress(function(e){ if(e.which===13) $('#l-pwd').focus(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,3072 @@
+export default {
+  // Общие элементы интерфейса
+  common: {
+    save: 'Сохранить',
+    cancel: 'Отмена',
+    delete: 'Удалить',
+    edit: 'Редактировать',
+    create: 'Создать',
+    update: 'Обновить',
+    search: 'Поиск',
+    filter: 'Фильтр',
+    actions: 'Действия',
+    back: 'Назад',
+    next: 'Далее',
+    previous: 'Предыдущий',
+    loading: 'Загрузка...',
+    error: 'Ошибка',
+    success: 'Успешно',
+    info: 'Информация',
+    confirm: 'Подтвердить',
+    close: 'Закрыть',
+    yes: 'Да',
+    no: 'Нет',
+    download: 'Скачать',
+    upload: 'Загрузить',
+    export: 'Экспорт',
+    import: 'Импорт',
+    refresh: 'Обновить',
+    reset: 'Сбросить',
+    apply: 'Применить',
+    clear: 'Очистить',
+    selectAll: 'Выбрать все',
+    deselectAll: 'Снять выделение',
+    noData: 'Нет данных',
+    selectLanguage: 'Выбрать язык',
+    add: 'Добавить',
+    remove: 'Удалить',
+    select: 'Выбрать',
+    copy: 'Копировать',
+    paste: 'Вставить',
+    cut: 'Вырезать',
+    undo: 'Отменить',
+    redo: 'Повторить',
+    submit: 'Отправить',
+    send: 'Отправить',
+    attach: 'Прикрепить',
+    detach: 'Открепить',
+    connect: 'Подключить',
+    connected: 'Подключен',
+    disconnected: 'Отключен',
+    saveSettings: 'Сохранить настройки'
+  },
+
+  // Навигация и меню
+  nav: {
+    home: 'Главная',
+    dashboard: 'Дашборд',
+    settings: 'Настройки',
+    profile: 'Профиль',
+    logout: 'Выход',
+    login: 'Вход',
+    help: 'Помощь',
+    documentation: 'Документация',
+    about: 'О системе',
+    mainMenu: 'Главное меню навигации'
+  },
+
+  // Маршруты и заголовки страниц
+  routes: {
+    home: 'Главная',
+    dashboard: 'Дашборд',
+    document: 'Документ',
+    quickStart: 'Быстрый старт',
+    userGuide: 'Руководство пользователя',
+    apiReference: 'Справочник API',
+    examples: 'Примеры',
+    faq: 'Частые вопросы',
+    mySpaces: 'Мои пространства',
+    workspace: 'Рабочее пространство',
+    agents: 'Агенты',
+    aiModels: 'Модели ИИ',
+    voiceAgent: 'Голосовой агент',
+    settings: 'Настройки',
+    profile: 'Профиль',
+    notifications: 'Уведомления',
+    videoConference: 'Видеоконференция',
+    youtubeAnalytics: 'Аналитика YouTube',
+    webScraper: 'Веб-скрапер',
+    salesAgent: 'Агент продаж',
+    cryptoWallet: 'Крипто-кошелек',
+    agroAnalytics: 'Сельскохозяйственная аналитика',
+    competitorMonitor: 'Мониторинг конкурентов',
+    integrationAgent: 'Агент интеграции',
+    codeReview: 'Ревью кода',
+    tables: 'Таблицы',
+    reports: 'Отчеты'
+  },
+
+  // Тема и внешний вид
+  theme: {
+    light: 'Включить светлую тему',
+    dark: 'Включить тёмную тему',
+    settings: 'Настройки темы',
+    colorScheme: 'Цветовая схема',
+    primaryColor: 'Основной цвет',
+    scale: 'Масштаб',
+    menuMode: 'Режим меню'
+  },
+
+  // Страница 404
+  notFound: {
+    title: 'Страница не найдена',
+    code: '404',
+    description: 'Запрашиваемый ресурс недоступен.',
+    links: {
+      faq: {
+        title: 'Часто задаваемые вопросы',
+        description: 'Ответы на популярные вопросы.'
+      },
+      solution: {
+        title: 'Центр решений',
+        description: 'Помощь в решении проблем.'
+      },
+      permissions: {
+        title: 'Управление разрешениями',
+        description: 'Настройка прав доступа.'
+      }
+    },
+    button: 'Перейти на главную'
+  },
+
+  // Страница настроек
+  settings: {
+    title: 'Настройки',
+    export: {
+      title: 'Экспорт данных',
+      fullExport: 'Полный экспорт данных',
+      dataTypes: 'Типы данных',
+      selectDataTypes: 'Выберите типы данных',
+      format: 'Формат экспорта',
+      selectFormat: 'Выберите формат',
+      dateRange: 'Период',
+      selectDateRange: 'Выберите период',
+      includeMetadata: 'Включить метаданные',
+      includeAttachments: 'Включить вложения',
+      request: 'Запросить экспорт',
+      gdpr: 'GDPR экспорт (все данные)',
+      history: 'История экспортов',
+      id: 'ID',
+      status: 'Статус',
+      createdAt: 'Создан',
+      size: 'Размер',
+      actions: 'Действия',
+      download: 'Скачать',
+      delete: 'Удалить',
+      scheduled: 'Запланированные экспорты',
+      frequency: 'Частота',
+      selectFrequency: 'Выберите частоту',
+      scheduleExport: 'Создать расписание',
+      nextRun: 'Следующий запуск'
+    },
+    import: {
+      title: 'Импорт данных',
+      uploadFile: 'Загрузить файл для импорта',
+      dragDrop: 'Перетащите файл сюда или нажмите для выбора',
+      fileSelected: 'Выбран файл',
+      dryRun: 'Пробный запуск (без изменений)',
+      validateOnly: 'Только проверка',
+      upload: 'Загрузить и проверить',
+      cancel: 'Отмена',
+      validationResults: 'Результаты проверки',
+      errorsFound: 'Обнаружены ошибки',
+      moreErrors: 'И еще',
+      errors: 'ошибок',
+      validationSuccess: 'Валидация успешна. Можно импортировать.',
+      preview: 'Предпросмотр',
+      recordsToImport: 'Записей для импорта',
+      confirm: 'Подтвердить импорт',
+      history: 'История импортов',
+      id: 'ID',
+      filename: 'Файл',
+      status: 'Статус',
+      imported: 'Импортировано',
+      createdAt: 'Создан',
+      actions: 'Действия'
+    },
+    backup: {
+      title: 'Резервное копирование',
+      create: 'Создать резервную копию',
+      description: 'Создайте полную резервную копию всех ваших данных',
+      createNow: 'Создать резервную копию',
+      cloudIntegration: 'Интеграция с облачными хранилищами',
+      history: 'История резервных копий',
+      date: 'Дата',
+      size: 'Размер',
+      status: 'Статус',
+      actions: 'Действия',
+      download: 'Скачать',
+      restore: 'Восстановить',
+      delete: 'Удалить'
+    },
+    security: {
+      title: 'Безопасность и аудит',
+      exportSettings: 'Настройки безопасности экспорта',
+      encryptExports: 'Шифровать экспорты',
+      passwordProtect: 'Защищать паролем',
+      tempLinks: 'Использовать временные ссылки (7 дней)',
+      save: 'Сохранить настройки',
+      auditLog: 'Журнал аудита экспортов',
+      timestamp: 'Время',
+      action: 'Действие',
+      user: 'Пользователь',
+      details: 'Детали'
+    }
+  },
+
+  // Аутентификация
+  auth: {
+    login: 'Вход',
+    logout: 'Выход',
+    register: 'Регистрация',
+    email: 'Email',
+    password: 'Пароль',
+    confirmPassword: 'Подтвердите пароль',
+    forgotPassword: 'Забыли пароль?',
+    rememberMe: 'Запомнить меня',
+    loginButton: 'Войти',
+    registerButton: 'Зарегистрироваться',
+    or: 'или',
+    loginWith: 'Войти через',
+    noAccount: 'Нет аккаунта?',
+    hasAccount: 'Уже есть аккаунт?'
+  },
+
+  // Дата и время
+  dateTime: {
+    today: 'Сегодня',
+    yesterday: 'Вчера',
+    tomorrow: 'Завтра',
+    thisWeek: 'На этой неделе',
+    thisMonth: 'В этом месяце',
+    thisYear: 'В этом году',
+    custom: 'Выборочно',
+    from: 'С',
+    to: 'До',
+    selectDate: 'Выберите дату',
+    selectTime: 'Выберите время',
+    selectDateTime: 'Выберите дату и время'
+  },
+
+  // Сообщения валидации
+  validation: {
+    required: 'Это поле обязательно',
+    email: 'Введите корректный email',
+    minLength: 'Минимальная длина {min} символов',
+    maxLength: 'Максимальная длина {max} символов',
+    pattern: 'Введите корректное значение',
+    passwordMatch: 'Пароли не совпадают',
+    invalidFormat: 'Неверный формат'
+  },
+
+  // Уведомления
+  notifications: {
+    title: 'Уведомления',
+    markAllRead: 'Отметить все прочитанными',
+    noNotifications: 'Нет уведомлений',
+    viewAll: 'Показать все',
+    settings: 'Настройки уведомлений',
+    enableSound: 'Включить звук',
+    enableDesktop: 'Включить уведомления на рабочем столе'
+  },
+
+  // Ошибки
+  errors: {
+    unexpected: 'Произошла непредвиденная ошибка',
+    network: 'Ошибка сети. Проверьте подключение.',
+    notFound: 'Ресурс не найден',
+    unauthorized: 'Неавторизованный доступ',
+    forbidden: 'Доступ запрещен',
+    serverError: 'Ошибка сервера. Попробуйте позже.',
+    tryAgain: 'Попробуйте еще раз'
+  },
+
+  // Главное меню
+  menu: {
+    main: 'Главное',
+    tasks: 'Задачи',
+    agents: 'Агенты',
+    myWorkspaces: 'Мои пространства',
+    infrastructure: 'Инфраструктура БАС',
+    droneManagement: 'Управление дронами',
+    controlPanel: 'Панель управления',
+    buildAnalytics: 'Аналитика сборки',
+    map: 'Карта',
+    tar1090: 'Tar1090',
+    analyticsAndAggregators: 'Аналитика и агрегаторы',
+    youtubeAnalytics: 'Аналитика YouTube',
+    telegramGroupParser: 'Парсер Telegram групп',
+    telegramAds: 'Реклама в Telegram',
+    webScraper: 'Парсер сайтов',
+    management: 'Управление',
+    editor: 'Редактор',
+    flowEditor: 'Flow Editor',
+    reportEditor: 'Редактор отчётов',
+    tables: 'Таблицы',
+    reports: 'Отчёты',
+    structure: 'Структура',
+    kanban: 'Канбан',
+    maps: 'Карты',
+    finModel: 'Финмодель',
+    vueFlow: 'Vue Flow',
+    surveys: 'Опросы',
+    test: 'Тест',
+    agentsAndWorkflow: 'Агенты и Воркфлоу',
+    training: 'Обучение',
+    lesson: 'Урок',
+    introduction: 'Введение',
+    firstWorkflow: 'Первый Workflow',
+    agentSettings: 'Настройки агентов',
+    advancedTechniques: 'Продвинутые техники',
+    practicalCases: 'Практические кейсы',
+    aiSystemPrototyping: 'Прототипирование систем с ИИ',
+    aiBibliographicWork: 'Практическое применение ИИ в библиографической работе',
+    aiLibraryIntegration: 'Интеграция ИИ с библиотечными системами',
+    mlRecommendations: 'Машинное обучение для рекомендательных систем',
+    nlpQueryProcessing: 'NLP в обработке запросов'
+  },
+
+  // Модуль агентов
+  agents: {
+    title: 'Агенты',
+    createNew: 'Создать агента',
+    list: 'Список агентов',
+    edit: 'Редактировать агента',
+    delete: 'Удалить агента',
+    settings: 'Настройки агента',
+    status: 'Статус',
+    running: 'Работает',
+    stopped: 'Остановлен',
+    error: 'Ошибка',
+    name: 'Имя агента',
+    description: 'Описание',
+    type: 'Тип',
+    created: 'Создан',
+    modified: 'Изменен',
+    actions: 'Действия',
+    start: 'Запустить',
+    stop: 'Остановить',
+    restart: 'Перезапустить',
+    configure: 'Настроить',
+    logs: 'Логи',
+    metrics: 'Метрики',
+    testRunner: 'Тест-раннер',
+    // AgentStatusPanel
+    statistics: 'Статистика',
+    agentsCount: 'агентов',
+    suggestionsCount: 'предложений',
+    filesAnalyzed: 'Файлов проанализировано',
+    suggestions: 'Предложений',
+    applied: 'Применено',
+    errorsFound: 'Ошибок найдено',
+    started: 'Запущен',
+    goToWorkspace: 'Перейти к workspace',
+    stopAgent: 'Остановить агента',
+    removeAgent: 'Удалить агента',
+    noAgents: 'Нет запущенных агентов',
+    emptyStateHint: 'Запустите агента в workspace для автоматического анализа кода',
+    openWorkspaces: 'Открыть Workspaces',
+    goToAgents: 'Перейти в агенты'
+  },
+
+  // Модуль сельского хозяйства
+  agriculture: {
+    title: 'Сельское хозяйство',
+    productivity: {
+      title: 'Продуктивность полей',
+      addField: 'Добавить поле',
+      fieldName: 'Название поля',
+      area: 'Площадь',
+      crop: 'Культура',
+      yield: 'Урожайность',
+      season: 'Сезон',
+      edit: 'Редактировать поле',
+      delete: 'Удалить поле',
+      statistics: 'Статистика',
+      averageYield: 'Средняя урожайность',
+      totalArea: 'Общая площадь',
+      totalProduction: 'Общее производство'
+    },
+    services: {
+      title: 'Заказ услуг',
+      pollination: 'Услуга опыления',
+      fertilization: 'Услуга обработки удобрениями',
+      orderService: 'Заказать услугу',
+      serviceType: 'Тип услуги',
+      date: 'Дата',
+      status: 'Статус',
+      pending: 'Ожидает',
+      inProgress: 'В процессе',
+      completed: 'Завершено',
+      cancelled: 'Отменено'
+    },
+    recipes: {
+      title: 'Рецептуры обработки',
+      createRecipe: 'Создать рецептуру',
+      recipeName: 'Название рецептуры',
+      ingredients: 'Ингредиенты',
+      dosage: 'Дозировка',
+      application: 'Способ применения',
+      notes: 'Примечания',
+      edit: 'Редактировать рецептуру',
+      delete: 'Удалить рецептуру'
+    },
+    missions: {
+      title: 'Полетные задания',
+      createMission: 'Создать задание',
+      missionName: 'Название задания',
+      field: 'Поле',
+      recipe: 'Рецептура',
+      drone: 'Дрон',
+      date: 'Дата',
+      status: 'Статус',
+      planned: 'Запланировано',
+      inProgress: 'Выполняется',
+      completed: 'Завершено',
+      failed: 'Не выполнено'
+    }
+  },
+
+  // Модуль таблиц
+  tables: {
+    title: 'Таблицы',
+    createTable: 'Создать таблицу',
+    tableName: 'Название таблицы',
+    columns: 'Столбцы',
+    rows: 'Строки',
+    addColumn: 'Добавить столбец',
+    addRow: 'Добавить строку',
+    deleteColumn: 'Удалить столбец',
+    deleteRow: 'Удалить строку',
+    columnName: 'Название столбца',
+    columnType: 'Тип столбца',
+    text: 'Текст',
+    number: 'Число',
+    date: 'Дата',
+    boolean: 'Логический',
+    select: 'Выбор',
+    multiSelect: 'Множественный выбор',
+    export: 'Экспорт',
+    import: 'Импорт',
+    filter: 'Фильтр',
+    sort: 'Сортировка',
+    search: 'Поиск',
+    noData: 'Нет данных'
+  },
+
+  // Модуль чата
+  chat: {
+    title: 'Чат',
+    sendMessage: 'Отправить сообщение',
+    attachFile: 'Прикрепить файл',
+    fromDevice: 'С устройства',
+    tablesReports: 'Таблицы/отчёты',
+    saveChat: 'Сохранить текущий чат',
+    clearChat: 'Очистить чат',
+    settings: 'Настройки',
+    model: 'Модель',
+    temperature: 'Температура',
+    maxTokens: 'Макс. токенов',
+    systemPrompt: 'Системный промпт',
+    resetDefaults: 'Сбросить по умолчанию',
+    tools: 'Инструменты',
+    availableTools: 'Доступные инструменты',
+    close: 'Закрыть',
+    cancel: 'Отмена',
+    attach: 'Прикрепить',
+    save: 'Сохранить'
+  },
+
+  // Профиль и настройки пользователя
+  profile: {
+    title: 'Профиль',
+    editProfile: 'Редактировать профиль',
+    logout: 'Выход',
+    name: 'Имя',
+    email: 'Email',
+    phone: 'Телефон',
+    avatar: 'Аватар',
+    changePassword: 'Изменить пароль',
+    currentPassword: 'Текущий пароль',
+    newPassword: 'Новый пароль',
+    confirmPassword: 'Подтвердите пароль',
+    saveChanges: 'Сохранить изменения',
+    language: 'Язык',
+    theme: 'Тема',
+    notifications: 'Уведомления'
+  },
+
+  // Модуль API ключей
+  apiKeys: {
+    title: 'API Ключи',
+    createNew: 'Создать новый ключ',
+    keyName: 'Название ключа',
+    permissions: 'Разрешения',
+    created: 'Создан',
+    lastUsed: 'Последнее использование',
+    status: 'Статус',
+    active: 'Активен',
+    inactive: 'Неактивен',
+    revoked: 'Отозван',
+    edit: 'Редактировать',
+    delete: 'Удалить',
+    revoke: 'Отозвать',
+    copyKey: 'Копировать ключ',
+    showKey: 'Показать ключ',
+    hideKey: 'Скрыть ключ',
+    confirmDelete: 'Вы уверены, что хотите удалить этот API ключ?',
+    confirmRevoke: 'Вы уверены, что хотите отозвать этот API ключ?',
+    createKey: 'Создать ключ',
+    saveKey: 'Сохранить'
+  },
+
+  // Видеоконференция
+  videoConference: {
+    title: 'Видеоконференция',
+    startMeeting: 'Начать встречу',
+    joinMeeting: 'Присоединиться к встрече',
+    meetingId: 'ID встречи',
+    copyLink: 'Копировать ссылку',
+    shareScreen: 'Демонстрация экрана',
+    stopScreenShare: 'Остановить демонстрацию',
+    toggleCamera: 'Включить/выключить камеру',
+    toggleMicrophone: 'Включить/выключить микрофон',
+    leaveMeeting: 'Покинуть встречу',
+    endMeeting: 'Завершить встречу',
+    participants: 'Участники',
+    chat: 'Чат',
+    settings: 'Настройки',
+    audioSettings: 'Настройки аудио',
+    videoSettings: 'Настройки видео',
+    selectMicrophone: 'Выбрать микрофон',
+    selectCamera: 'Выбрать камеру',
+    selectSpeaker: 'Выбрать динамик'
+  },
+
+  // Аналитика YouTube
+  youtubeAnalytics: {
+    title: 'Аналитика YouTube',
+    channelUrl: 'URL канала',
+    analyze: 'Анализировать',
+    loading: 'Загрузка...',
+    statistics: 'Статистика',
+    subscribers: 'Подписчики',
+    views: 'Просмотры',
+    videos: 'Видео',
+    averageViews: 'Средние просмотры на видео',
+    engagement: 'Уровень вовлеченности',
+    topVideos: 'Топ видео',
+    recentVideos: 'Недавние видео',
+    videoTitle: 'Название',
+    videoViews: 'Просмотры',
+    videoLikes: 'Лайки',
+    videoComments: 'Комментарии',
+    publishedAt: 'Опубликовано',
+    exportData: 'Экспорт данных',
+    exportJSON: 'Экспорт в JSON',
+    exportCSV: 'Экспорт в CSV',
+    clear: 'Очистить',
+    aiAnalysis: 'AI анализ',
+    selectModel: 'AI модель для анализа'
+  },
+
+  // Веб-скрапер
+  webScraper: {
+    title: 'Парсер сайтов',
+    url: 'URL',
+    startParsing: 'Начать парсинг',
+    parsing: 'Парсинг...',
+    results: 'Результаты',
+    total: 'Всего',
+    exportJSON: 'Экспорт в JSON',
+    exportCSV: 'Экспорт в CSV',
+    clear: 'Очистить',
+    selectSource: 'Выбрать источник',
+    avitoRealEstate: 'Avito Недвижимость',
+    cianRealEstate: 'CIAN Недвижимость',
+    customUrl: 'Свой URL',
+    filters: 'Фильтры',
+    city: 'Город',
+    priceMin: 'Мин. цена',
+    priceMax: 'Макс. цена',
+    area: 'Площадь',
+    rooms: 'Комнаты',
+    aiModel: 'AI модель для анализа'
+  },
+
+  // Криптокошелек
+  cryptoWallet: {
+    title: 'Криптокошелек',
+    totalBalance: 'Общий баланс',
+    addWallet: 'Добавить кошелек',
+    wallets: 'Кошельки',
+    currency: 'Валюта',
+    balance: 'Баланс',
+    value: 'Стоимость',
+    send: 'Отправить',
+    receive: 'Получить',
+    transactions: 'Транзакции',
+    date: 'Дата',
+    type: 'Тип',
+    amount: 'Сумма',
+    status: 'Статус',
+    pending: 'Ожидает',
+    completed: 'Завершено',
+    failed: 'Не выполнено',
+    address: 'Адрес',
+    copyAddress: 'Копировать адрес',
+    qrCode: 'QR код',
+    settings: 'Настройки',
+    security: 'Безопасность',
+    supportedCurrencies: 'Поддерживаемые валюты',
+    about: 'О модуле',
+    features: 'Возможности',
+    display: 'Отображение',
+    notifications: 'Уведомления'
+  },
+
+  // Управление дронами
+  drone: {
+    title: 'Управление дронами',
+    controlPanel: 'Панель управления',
+    buildAnalytics: 'Аналитика сборки',
+    status: 'Статус',
+    connected: 'Подключен',
+    disconnected: 'Отключен',
+    battery: 'Батарея',
+    altitude: 'Высота',
+    speed: 'Скорость',
+    gps: 'GPS',
+    takeoff: 'Взлет',
+    land: 'Посадка',
+    returnHome: 'Возврат домой',
+    emergency: 'Экстренная остановка',
+    flightMode: 'Режим полета',
+    manual: 'Ручной',
+    automatic: 'Автоматический',
+    waypoints: 'Точки маршрута',
+    mission: 'Миссия',
+    motors: 'Моторы',
+    batteryDetails: 'Аккумулятор',
+    stack: 'Стек (Flight Controller)',
+    propellers: 'Пропеллеры',
+    compatibility: 'Совместимость компонентов'
+  },
+
+  // Источники данных
+  dataSources: {
+    title: 'Источники данных',
+    subtitle: 'Управление подключениями к внешним источникам данных',
+    addSource: 'Добавить источник',
+    addFirst: 'Добавить первый источник',
+    empty: 'Нет подключенных источников данных',
+    saved: 'Источник сохранен',
+    savedMessage: 'Источник данных успешно сохранен',
+    neverSynced: 'Никогда',
+
+    stats: {
+      total: 'Всего источников',
+      active: 'Активных',
+      syncs: 'Синхронизаций',
+      errors: 'Ошибок'
+    },
+
+    filters: {
+      type: 'Тип',
+      status: 'Статус',
+      allTypes: 'Все типы',
+      allStatuses: 'Все статусы',
+      reset: 'Сбросить фильтры'
+    },
+
+    table: {
+      name: 'Название',
+      type: 'Тип',
+      status: 'Статус',
+      lastSync: 'Последняя синхронизация',
+      syncCount: 'Количество синхронизаций',
+      actions: 'Действия'
+    },
+
+    actions: {
+      test: 'Тестировать подключение',
+      sync: 'Синхронизировать',
+      edit: 'Редактировать',
+      delete: 'Удалить'
+    },
+
+    test: {
+      success: 'Подключение успешно',
+      failed: 'Подключение не удалось',
+      error: 'Ошибка тестирования'
+    },
+
+    sync: {
+      success: 'Синхронизация завершена',
+      failed: 'Синхронизация не удалась',
+      recordsProcessed: 'Обработано записей: {count}'
+    },
+
+    delete: {
+      title: 'Удалить источник данных',
+      message: 'Вы уверены, что хотите удалить источник "{name}"?',
+      success: 'Источник удален',
+      successMessage: 'Источник данных "{name}" успешно удален',
+      failed: 'Не удалось удалить источник'
+    },
+
+    errors: {
+      loadFailed: 'Не удалось загрузить источники данных'
+    },
+
+    types: {
+      restApi: {
+        description: 'Подключение к REST API эндпоинтам'
+      },
+      database: {
+        description: 'Подключение к базам данных'
+      },
+      fileUpload: {
+        description: 'Загрузка данных из файлов'
+      },
+      webhook: {
+        description: 'Получение данных через вебхуки'
+      },
+      googleSheets: {
+        description: 'Синхронизация с Google Таблицами'
+      },
+      integram: {
+        description: 'Подключение к базе данных Интеграм'
+      }
+    },
+
+    wizard: {
+      title: 'Добавить источник данных',
+      editTitle: 'Редактировать источник данных',
+
+      steps: {
+        type: 'Тип',
+        basic: 'Основная информация',
+        config: 'Конфигурация',
+        credentials: 'Учетные данные',
+        review: 'Проверка'
+      },
+
+      step1: {
+        title: 'Выберите тип источника данных',
+        description: 'Выберите тип источника данных, который вы хотите подключить'
+      },
+
+      step2: {
+        title: 'Основная информация',
+        description: 'Укажите название и описание источника данных',
+        name: 'Название',
+        namePlaceholder: 'Введите название источника данных',
+        description: 'Описание',
+        descriptionPlaceholder: 'Введите описание (опционально)'
+      },
+
+      step3: {
+        title: 'Конфигурация подключения',
+        description: 'Настройте параметры подключения',
+        endpoint: 'Эндпоинт',
+        method: 'HTTP метод',
+        authType: 'Тип аутентификации',
+        timeout: 'Таймаут',
+        databaseType: 'Тип базы данных',
+        host: 'Хост',
+        port: 'Порт',
+        database: 'База данных',
+        webhookInfo: 'Вебхук URL будет сгенерирован после создания',
+        fileType: 'Тип файла',
+        spreadsheetId: 'ID Google Таблицы',
+        sheetName: 'Название листа',
+        databaseName: 'Название базы данных',
+        username: 'Имя пользователя',
+        password: 'Пароль'
+      },
+
+      step4: {
+        title: 'Учетные данные',
+        description: 'Выберите учетные данные для подключения',
+        selectSecret: 'Выберите секрет',
+        selectSecretPlaceholder: 'Выберите существующий секрет',
+        secretHelp: 'Секреты хранятся в безопасном хранилище организации',
+        noSecrets: 'Нет доступных секретов. Создайте секрет в настройках организации.'
+      },
+
+      step5: {
+        title: 'Проверка и подтверждение',
+        description: 'Проверьте настройки перед сохранением',
+        sourceType: 'Тип источника',
+        name: 'Название',
+        description: 'Описание',
+        configuration: 'Конфигурация',
+        secret: 'Секрет'
+      }
+    }
+  },
+
+  // Агент 1С
+  onecAgent: {
+    title: 'Агент интеграции 1С',
+    checkConnection: 'Проверить подключение',
+    getDatabaseStructure: 'Получить структуру базы',
+    unload: 'Выгрузить',
+    unloadData: 'Выгрузить данные',
+    loadData: 'Загрузить данные'
+  },
+
+  // Отслеживание посылок
+  packageTracking: {
+    title: 'Отслеживание посылок',
+    track: 'Отследить',
+    save: 'Сохранить',
+    update: 'Обновить',
+    updateAll: 'Обновить все'
+  },
+
+  // Парсер групп
+  groupParserBot: {
+    title: 'Парсер Telegram групп',
+    checkConnection: 'Проверить подключение',
+    loadGroups: 'Загрузить группы',
+    updateList: 'Обновить список',
+    parse: 'Парсить',
+    update: 'Обновить'
+  },
+
+  // Мониторинг конкурентов
+  competitorMonitor: {
+    title: 'Мониторинг конкурентов',
+    aiModel: 'AI модель для анализа'
+  },
+
+  // GitHub агент
+  githubAgent: {
+    // Диалоги
+    tokenDialog: {
+      header: 'GitHub Personal Access Token',
+      githubToken: 'GitHub Token'
+    },
+    viewTokenDialog: {
+      header: 'GitHub Personal Access Token'
+    },
+    createIssueDialog: {
+      header: 'Создать новый Issue'
+    },
+    createPRDialog: {
+      header: 'Создать Pull Request'
+    },
+    mergeDialog: {
+      header: 'Подтвердите мерж'
+    },
+    clearTokenDialog: {
+      header: 'Подтвердите удаление токена'
+    },
+    issueDetailsDialog: {
+      header: 'Issue #{number}',
+      loading: 'Загрузка...'
+    },
+    prDetailsDialog: {
+      header: 'Pull Request #{number}',
+      loading: 'Загрузка...'
+    },
+    editCommentDialog: {
+      header: 'Редактировать комментарий'
+    },
+    editBodyDialog: {
+      headerIssue: 'Редактировать описание issue',
+      headerPR: 'Редактировать описание PR'
+    },
+    deleteCommentDialog: {
+      header: 'Удалить комментарий'
+    },
+    createReviewDialog: {
+      header: 'Создать отзыв'
+    },
+    // Вкладки
+    tabs: {
+      issues: 'Issues',
+      pullRequests: 'Pull Requests'
+    }
+  },
+
+  // Backend Dashboard
+  backendDashboard: {
+    title: 'Панель управления Backend',
+    subtitle: 'Комплексная панель для мониторинга, управления и развертывания всех backend сервисов',
+    refreshAll: 'Обновить всё',
+    systemHealth: 'Состояние системы',
+
+    // Overview Cards
+    overview: {
+      systemStatus: 'Статус системы',
+      serverIp: 'IP сервера',
+      memoryUsage: 'Использование памяти',
+      activeServices: 'Активные сервисы',
+      apiEndpoints: 'API эндпоинты',
+      environment: 'Окружение',
+      loading: 'Загрузка...',
+      unknown: 'неизвестно',
+      free: 'свободно',
+      healthy: 'здоровых',
+      categories: 'категорий'
+    },
+
+    // Tabs
+    tabs: {
+      services: 'Сервисы',
+      endpoints: 'API Эндпоинты',
+      configuration: 'Конфигурация',
+      deployment: 'Развертывание',
+      logs: 'Логи',
+      metrics: 'Метрики'
+    },
+
+    // Services Tab
+    services: {
+      searchPlaceholder: 'Поиск сервисов...',
+      filterByStatus: 'Фильтр по статусу',
+      allStatus: 'Все статусы',
+      running: 'Работает',
+      stopped: 'Остановлен',
+      unknown: 'Неизвестно',
+      serviceName: 'Название сервиса',
+      status: 'Статус',
+      health: 'Здоровье',
+      ipAddress: 'IP адрес',
+      location: 'Местоположение',
+      port: 'Порт',
+      uptime: 'Время работы',
+      actions: 'Действия',
+      viewDetails: 'Просмотр деталей',
+      openServiceUrl: 'Открыть URL сервиса',
+      restartService: 'Перезапустить сервис',
+      na: 'Н/Д'
+    },
+
+    // Endpoints Tab
+    endpoints: {
+      searchPlaceholder: 'Поиск эндпоинтов...',
+      filterByCategory: 'Фильтр по категории',
+      allCategories: 'Все категории',
+      endpoint: 'Эндпоинт',
+      category: 'Категория',
+      sourceFile: 'Исходный файл',
+      size: 'Размер',
+      lastModified: 'Последнее изменение',
+      actions: 'Действия',
+      apiDocumentation: 'API документация',
+      viewSourceCode: 'Просмотр исходного кода'
+    },
+
+    // Configuration Tab
+    configuration: {
+      serverConfiguration: 'Конфигурация сервера',
+      port: 'Порт',
+      httpsEnabled: 'HTTPS включен',
+      environment: 'Окружение',
+      yes: 'Да',
+      no: 'Нет',
+      featureFlags: 'Флаги функций',
+      redis: 'Redis',
+      database: 'База данных',
+      openai: 'OpenAI',
+      deepseek: 'DeepSeek',
+      youtubeApi: 'YouTube API',
+      stripe: 'Stripe',
+      pathsDirectories: 'Пути и директории',
+      workingDirectory: 'Рабочая директория',
+      uploadsDirectory: 'Директория загрузок',
+      dataDirectory: 'Директория данных',
+      logsDirectory: 'Директория логов'
+    },
+
+    // Deployment Tab
+    deployment: {
+      currentDeployment: 'Текущее развертывание',
+      environment: 'Окружение',
+      version: 'Версия',
+      deployedAt: 'Развернуто',
+      gitBranch: 'Git ветка',
+      gitCommit: 'Git коммит',
+      deploymentActions: 'Действия развертывания',
+      deployToProduction: 'Развернуть в продакшн',
+      deployToStaging: 'Развернуть на staging',
+      rollback: 'Откатить',
+      deploymentHistory: 'История развертываний',
+      noHistory: 'История развертываний недоступна',
+      confirmProduction: 'Вы уверены, что хотите развернуть в продакшн?',
+      confirmRollback: 'Вы уверены, что хотите откатить развертывание?',
+      comingSoon: 'Функция скоро появится'
+    },
+
+    // Logs Tab
+    logs: {
+      title: 'Файлы логов',
+      refresh: 'Обновить список',
+      development: 'Разработка (dev.drondoc.ru)',
+      production: 'Продакшн (drondoc.ru)',
+      backendMonolith: 'Backend Монолит',
+      noLogs: 'Нет доступных логов',
+      selectFile: 'Выберите лог-файл для просмотра',
+      loading: 'Загрузка лога...',
+      empty: 'Лог пуст или недоступен',
+      download: 'Скачать',
+      autoRefresh: 'Авто-обновление',
+      stopAutoRefresh: 'Остановить авто-обновление',
+      startAutoRefresh: 'Включить авто-обновление',
+      lines: 'Строк',
+      tailMode: 'Последние строки',
+      apply: 'Применить',
+      fileSize: 'Размер',
+      totalLines: 'Строк',
+      modified: 'Изменён',
+      showingLines: 'Показано строк',
+      of: 'из',
+      autoRefreshEnabled: 'Авто-обновление включено',
+      autoRefreshDisabled: 'Авто-обновление выключено',
+      every: 'каждые',
+      seconds: 'секунд',
+      errorLoading: 'Не удалось загрузить',
+      errorDownload: 'Не удалось скачать лог файл',
+      successDownload: 'Лог файл скачан',
+      fileUnavailable: 'Файл лога недоступен'
+    },
+
+    // Metrics Tab
+    metrics: {
+      systemMemory: 'Системная память',
+      cpuInformation: 'Информация о CPU',
+      processMemory: 'Память процесса',
+      total: 'Всего',
+      used: 'Использовано',
+      free: 'Свободно',
+      usage: 'Использование',
+      cores: 'Ядра',
+      model: 'Модель',
+      loadAverage: 'Средняя загрузка (1м)',
+      heapUsed: 'Heap используется',
+      heapTotal: 'Heap всего',
+      external: 'Внешняя',
+      rss: 'RSS'
+    },
+
+    // Service Details Dialog
+    serviceDetails: {
+      serviceInformation: 'Информация о сервисе',
+      status: 'Статус',
+      health: 'Здоровье',
+      type: 'Тип',
+      port: 'Порт',
+      serverInformation: 'Информация о сервере',
+      ipAddress: 'IP адрес',
+      hostname: 'Имя хоста',
+      domain: 'Домен',
+      location: 'Местоположение',
+      allIpAddresses: 'Все IP адреса',
+      publicIps: 'Публичные IP:',
+      privateIps: 'Приватные IP:',
+      serviceUrl: 'URL сервиса',
+      open: 'Открыть',
+      endpoints: 'Эндпоинты',
+      description: 'Описание',
+      na: 'Н/Д'
+    }
+  },
+
+  // Воркфлоу (Workflow)
+  workflow: {
+    title: 'Воркфлоу',
+    settings: 'Настройка воркфлоу',
+    agent: 'Агент',
+    createFrame: 'Создать рамку',
+    cancelFrame: 'Отменить рамку',
+    group: 'Группировать',
+    autoLayout: 'Авто-раскладка',
+    validate: 'Валидировать',
+    save: 'Сохранить',
+    nodes: 'Узлы воркфлоу',
+    searchNodes: 'Поиск узлов...',
+    startCreating: 'Начните создавать воркфлоу',
+    apply: 'Применить',
+    applyAndSave: 'Применить и сохранить',
+    validationErrors: 'Ошибки валидации',
+    fixErrors: 'Исправьте ошибки в воркфлоу',
+    saved: 'Воркфлоу сохранён',
+    saveSuccess: 'Воркфлоу успешно сохранён'
+  },
+
+  // Категории агентов
+  agentCategories: {
+    all: 'Все категории',
+    ai: 'ИИ и ML',
+    analytics: 'Аналитика',
+    drones: 'Дроны и IoT',
+    automation: 'Автоматизация',
+    text: 'Обработка текста',
+    web: 'Веб-инструменты',
+    business: 'Бизнес',
+    hr: 'HR',
+    design: 'Дизайн',
+    sales: 'Продажи',
+    communication: 'Коммуникация',
+    education: 'Образование',
+    development: 'Разработка'
+  },
+
+  // Страница агентов
+  agentsPage: {
+    title: 'Агенты',
+    subtitle: 'Умные агенты собирают данные и выполняют действия в каждом мини-приложении. Используйте готовые решения или создайте своего агента',
+    createAgent: 'Создать агента',
+    searchPlaceholder: 'Поиск агентов...',
+    createDialog: {
+      title: 'Создать нового агента',
+      name: 'Название агента',
+      namePlaceholder: 'Например: Агент анализа данных',
+      description: 'Описание',
+      descriptionPlaceholder: 'Опишите, какие данные собирает агент и какие действия выполняет...',
+      category: 'Категория',
+      categoryPlaceholder: 'Выберите категорию',
+      icon: 'Иконка (emoji)',
+      iconPlaceholder: '🤖',
+      aiAssistant: 'ИИ-Ассистент',
+      aiHelp: 'Опишите, какие данные должен собирать агент и какие действия выполнять, и наш ИИ поможет создать его',
+      aiPromptPlaceholder: 'Например: Создай агента для сбора и анализа тональности текстов из социальных сетей с автоматической генерацией отчетов',
+      generateWithAI: 'Сгенерировать с помощью ИИ'
+    },
+    creator: 'Integram Team',
+    statusRunning: 'Работает',
+    statusDraft: 'Черновик',
+    statusBeta: 'Бета'
+  },
+
+  // Issue #4960: Agent Purchase Translations
+  agentCard: {
+    free: 'Бесплатно',
+    month: 'мес',
+    activate: 'Активировать',
+    buy: 'Купить',
+    subscribe: 'Подписаться',
+    get: 'Получить'
+  },
+
+  // Issue #4987: Agent Comparison Translations
+  agentCompare: {
+    title: 'Сравнение агентов',
+    subtitle: 'Сравните {count} агентов и выберите лучший для ваших задач',
+    selected: '{count} выбрано',
+    more: 'ещё',
+    clear: 'Очистить',
+    compare: 'Сравнить',
+    addMore: 'Добавить агенты',
+    feature: 'Характеристика',
+    features: {
+      price: 'Цена',
+      pricingModel: 'Модель оплаты',
+      status: 'Статус',
+      category: 'Категория',
+      description: 'Описание',
+      tags: 'Функции и возможности'
+    },
+    pricingModels: {
+      free: 'Бесплатно',
+      oneTime: 'Единоразовая покупка',
+      subscription: 'Подписка'
+    },
+    emptyTitle: 'Выберите агенты для сравнения',
+    emptyDescription: 'Вернитесь на страницу агентов и отметьте чекбоксы на карточках агентов, которые хотите сравнить',
+    browseAgents: 'Перейти к агентам',
+    maxReached: 'Достигнут лимит',
+    maxReachedDetail: 'Можно сравнить максимум 5 агентов одновременно',
+    notEnoughAgents: 'Недостаточно агентов',
+    notEnoughAgentsDetail: 'Выберите хотя бы 2 агента для сравнения',
+    purchaseInitiated: 'Переход к покупке',
+    noAgentsFound: 'Агенты не найдены'
+  },
+
+  agentPurchase: {
+    title: 'Покупка агента',
+    by: 'От',
+    pricingDetails: 'Информация о ценах',
+    free: 'Бесплатно',
+    month: 'мес',
+    paymentMethod: 'Способ оплаты',
+    activate: 'Активировать',
+    buyNow: 'Купить',
+    subscribe: 'Подписаться',
+    models: {
+      free: 'Бесплатно',
+      oneTime: 'Единоразовая оплата',
+      subscription: 'Подписка'
+    },
+    methods: {
+      card: 'Банковская карта',
+      yookassa: 'ЮКасса',
+      stripe: 'Stripe'
+    },
+    features: {
+      basicAccess: 'Базовый доступ',
+      lifetimeAccess: 'Бессрочный доступ',
+      monthlyUpdates: 'Ежемесячные обновления',
+      prioritySupport: 'Приоритетная поддержка',
+      cancelAnytime: 'Отмена в любое время'
+    },
+    success: {
+      activated: 'Агент успешно активирован',
+      alreadyActivated: 'Этот агент уже активирован для вашего аккаунта',
+      purchased: 'Агент успешно приобретен',
+      subscribed: 'Подписка на агента оформлена',
+      activatedDetail: '{name} добавлен в "Мои агенты"',
+      purchasedDetail: '{name} добавлен в "Мои агенты"',
+      subscribedDetail: '{name} добавлен в "Мои агенты"'
+    },
+    error: {
+      activationFailed: 'Не удалось активировать агента',
+      purchaseFailed: 'Не удалось купить агента',
+      subscriptionFailed: 'Не удалось оформить подписку'
+    },
+    actions: {
+      openAgent: 'Открыть агента',
+      goToMyAgents: 'Перейти в Мои агенты',
+      continueShopping: 'Продолжить покупки',
+      whatNext: 'Что делать дальше?'
+    }
+  },
+
+  // Backend Configuration
+  backendConfig: {
+    title: 'Конфигурация бэкенда и БД',
+    refresh: 'Обновить',
+    save: 'Сохранить',
+
+    // Tabs
+    tabs: {
+      monolith: 'Монолитный бэкенд',
+      integram: 'База данных Integram',
+      endpoints: 'Маппинг эндпоинтов',
+      test: 'Тестирование соединения'
+    },
+
+    // Monolith Backend
+    monolith: {
+      info: 'Настройте параметры подключения к монолитному бэкенду Integram (Node.js/Express)',
+      backendSettings: 'Настройки сервера бэкенда',
+      backendUrl: 'URL бэкенда',
+      backendUrlPlaceholder: 'http://localhost:8081',
+      backendUrlHelp: 'URL-адрес сервера монолитного бэкенда',
+      port: 'Порт',
+      portPlaceholder: '8081',
+      portHelp: 'Порт сервера бэкенда',
+
+      // Database
+      databaseSettings: 'Настройки базы данных (PostgreSQL)',
+      dbHost: 'Хост базы данных',
+      dbHostPlaceholder: 'localhost',
+      dbPort: 'Порт базы данных',
+      dbPortPlaceholder: '5432',
+      dbName: 'Имя базы данных',
+      dbNamePlaceholder: 'dronedoc',
+      dbUser: 'Пользователь БД',
+      dbUserPlaceholder: 'dronedoc',
+      dbPassword: 'Пароль БД',
+      dbPasswordPlaceholder: 'password',
+
+      // Authentication
+      authSettings: 'Настройки аутентификации',
+      jwtSecret: 'JWT Secret',
+      jwtSecretPlaceholder: 'Секретный ключ для подписи JWT',
+      jwtSecretHelp: 'Секретный ключ для подписи и проверки JWT токенов',
+      accessTokenExpiry: 'Срок действия Access Token',
+      accessTokenExpiryPlaceholder: '15m',
+      accessTokenExpiryHelp: 'Формат: 15m, 1h, 7d и т.д.',
+      refreshTokenExpiry: 'Срок действия Refresh Token',
+      refreshTokenExpiryPlaceholder: '7d',
+      refreshTokenExpiryHelp: 'Формат: 15m, 1h, 7d и т.д.'
+    },
+
+    // Integram
+    integram: {
+      info: 'Настройте параметры подключения к базе данных Integram (ddadmin)',
+      apiSettings: 'Настройки API Integram',
+      apiUrl: 'URL API Integram',
+      apiUrlPlaceholder: '${import.meta.env.VITE_INTEGRAM_URL}',
+      apiUrlHelp: 'Базовый URL для Integram API',
+      database: 'Имя базы данных',
+      databasePlaceholder: 'ddadmin',
+      databaseHelp: 'Имя базы данных Integram (например, ddadmin, a2025)',
+
+      // Credentials
+      adminCredentials: 'Учетные данные администратора',
+      adminLogin: 'Логин администратора',
+      adminLoginPlaceholder: 'd',
+      adminLoginHelp: 'Логин администратора для базы ddadmin',
+      adminPassword: 'Пароль администратора',
+      adminPasswordPlaceholder: 'd',
+      adminPasswordHelp: 'Пароль администратора для базы ddadmin',
+
+      // Tables
+      dataTables: 'Таблицы данных',
+      usersTable: 'ID таблицы пользователей',
+      usersTablePlaceholder: '18',
+      usersTableHelp: 'ID таблицы Integram для пользователей',
+      menusTable: 'ID таблицы меню',
+      menusTablePlaceholder: 'ID типа меню',
+      menusTableHelp: 'ID таблицы Integram для меню',
+      agentsTable: 'ID таблицы агентов',
+      agentsTablePlaceholder: 'ID типа агента',
+      agentsTableHelp: 'ID таблицы Integram для агентов',
+      tokensTable: 'ID таблицы токенов',
+      tokensTablePlaceholder: 'ID типа токена',
+      tokensTableHelp: 'ID таблицы Integram для токенов',
+      paymentsTable: 'ID таблицы платежей',
+      paymentsTablePlaceholder: 'ID типа платежа',
+      paymentsTableHelp: 'ID таблицы Integram для платежей'
+    },
+
+    // Endpoint Mapping
+    endpoints: {
+      info: 'Сопоставьте эндпоинты монолитного бэкенда с ID таблиц Integram',
+      mappingsTitle: 'Маппинг эндпоинт → Таблица',
+      backendEndpoint: 'Эндпоинт бэкенда',
+      tableId: 'ID таблицы Integram',
+      description: 'Описание',
+      addMapping: 'Добавить новый маппинг',
+      mappingUpdated: 'Маппинг обновлен',
+      mappingUpdatedDetail: 'Маппинг эндпоинта был обновлен'
+    },
+
+    // Testing
+    test: {
+      info: 'Протестируйте соединения с бэкендом и базой данных Integram',
+      monolithTests: 'Тесты монолитного бэкенда',
+      testHealth: 'Проверить работоспособность',
+      testDatabase: 'Проверить подключение к БД',
+      testAuth: 'Проверить аутентификацию',
+      integramTests: 'Тесты базы данных Integram',
+      testAPI: 'Проверить Integram API',
+      testIntegramAuth: 'Проверить аутентификацию',
+      testDict: 'Проверить доступ к справочнику',
+      testResults: 'Результаты тестов:',
+      passed: 'УСПЕШНО',
+      failed: 'ОШИБКА'
+    },
+
+    // Messages
+    messages: {
+      configLoaded: 'Конфигурация загружена',
+      configSaved: 'Конфигурация успешно сохранена',
+      useCachedConfig: 'Используется кэшированная конфигурация',
+      couldNotLoadFromServer: 'Не удалось загрузить с сервера, используется локальный кэш',
+      savedLocally: 'Сохранено локально',
+      savedToLocalStorage: 'Конфигурация сохранена в хранилище браузера',
+      testPassed: 'Тест пройден',
+      testFailed: 'Тест не пройден',
+      backendHealthy: 'Бэкенд работает исправно',
+      backendHealthSuccess: 'Проверка работоспособности бэкенда успешна',
+      backendHealthFailed: 'Проверка работоспособности бэкенда не удалась',
+      dbConnectionSuccess: 'Подключение к базе данных успешно',
+      dbConnectionFailed: 'Тест подключения к базе данных не прошел',
+      authTestSuccess: 'Система аутентификации работает',
+      authTestFailed: 'Тест аутентификации не прошел',
+      integramAPISuccess: 'Успешно подключено к Integram API',
+      integramAPIAccessible: 'Integram API доступен',
+      integramAPIFailed: 'Не удалось подключиться к Integram API',
+      integramAuthSuccess: 'Успешная аутентификация',
+      integramAuthFailed: 'Аутентификация не удалась',
+      integramAuthSuccessDetail: 'Аутентификация Integram успешна',
+      integramDictSuccess: 'Доступ к справочнику успешен',
+      integramDictFailed: 'Доступ к справочнику не удался',
+      failedToConnect: 'Не удалось подключиться'
+    }
+  },
+
+  // Landing Page
+  landing: {
+    hero: {
+      title: 'Ищете сотрудника? Наймите ИИ агента за 10% стоимости работника',
+      subtitle: 'Малый и средний бизнес (50-700 человек) заменяет сотрудников на ИИ агентов. Получите нужную функцию без найма, обучения и текучки кадров.',
+      cta: 'Создать первого агента бесплатно',
+      ctaDemo: 'Запланировать демо',
+      ctaROI: 'Рассчитать экономию',
+      chatPlaceholder: 'Напишите, что должен делать сотрудник...',
+      chatTitle: 'Опишите функции сотрудника',
+      chatSubtitle: 'Мы создадим ИИ агента для этих задач',
+      chatSend: 'Получить ИИ агента'
+    },
+
+    problems: {
+      title: 'Боли при найме сотрудников',
+      hiring: 'Поиск и найм занимает 2-3 месяца',
+      salary: 'Зарплата + налоги + офис = огромные затраты',
+      turnover: 'Текучка кадров — постоянная проблема',
+      scaling: 'Нужно масштабироваться, но нет бюджета на команду',
+      training: 'Обучение новых сотрудников требует времени',
+      availability: 'Сотрудник работает 8 часов, агент — 24/7'
+    },
+
+    solution: {
+      title: 'ИИ агенты вместо найма',
+      speed: 'Запуск за 1 день',
+      speedDesc: 'Вместо 2-3 месяцев найма',
+      savings: '10% от стоимости сотрудника',
+      savingsDesc: 'Экономия до 90%',
+      simplicity: 'Без HR и онбординга',
+      simplicityDesc: 'Настроил и работает',
+      scale: 'От 1 до 1000 функций',
+      scaleDesc: 'Масштаб без найма',
+      availability: 'Работает 24/7',
+      availabilityDesc: 'Без выходных и отпусков'
+    },
+
+    howItWorks: {
+      title: '3 шага до автоматизации',
+      step1: 'Опишите задачу',
+      step1Desc: 'Что должен делать агент',
+      step2: 'Настройте интеграции',
+      step2Desc: 'Подключите существующие системы',
+      step3: 'Запустите в работу',
+      step3Desc: 'Агент готов принимать заявки'
+    },
+
+    useCases: {
+      title: 'Какие функции сотрудников заменяют наши агенты',
+      customerSupport: {
+        title: 'Служба поддержки (50-150 сотрудников)',
+        feature1: 'Ответы на типовые вопросы 24/7',
+        feature2: 'Обработка заявок и заказов',
+        feature3: 'Консультации по продукту',
+        feature4: 'Сбор обратной связи',
+        case: 'Вместо 5 операторов — 1 ИИ агент. Экономия 45 000 руб./мес.'
+      },
+      sales: {
+        title: 'Отдел продаж (100-300 сотрудников)',
+        feature1: 'Квалификация лидов',
+        feature2: 'Первичный контакт с клиентом',
+        feature3: 'Ответы на вопросы о продукте',
+        feature4: 'Запись на встречу с менеджером',
+        case: 'Вместо 3 менеджеров по продажам — 1 ИИ агент. Экономия 180 000 руб./мес.'
+      },
+      backoffice: {
+        title: 'Back-office (200-700 сотрудников)',
+        feature1: 'Обработка документов',
+        feature2: 'Сбор и анализ данных',
+        feature3: 'Формирование отчётов',
+        feature4: 'Работа с базами данных',
+        case: 'Вместо 4 офис-менеджеров — 1 ИИ агент. Экономия 120 000 руб./мес.'
+      }
+    },
+
+    features: {
+      title: 'Всё, что нужно для автоматизации',
+      builder: 'Конструктор агентов',
+      builderDesc: 'Создавайте без кода',
+      integrations: 'Интеграции',
+      integrationsDesc: '50+ готовых интеграций',
+      multichannel: 'Мультиканальность',
+      multichannelDesc: 'Сайт, мессенджеры, email',
+      analytics: 'Аналитика',
+      analyticsDesc: 'Отслеживайте эффективность',
+      security: 'Безопасность',
+      securityDesc: 'Шифрование и защита данных',
+      scalability: 'Масштабируемость',
+      scalabilityDesc: 'От стартапа до энтерпрайза'
+    },
+
+    socialProof: {
+      title: 'Нам доверяют',
+      agents: '500+ активных агентов',
+      requests: '10 000+ обработанных заявок в день',
+      savings: '60% средняя экономия на операционных расходах'
+    },
+
+    pricing: {
+      title: 'Прозрачные цены',
+      starter: {
+        title: 'Starter',
+        price: 'Бесплатно',
+        agent: '1 агент',
+        interactions: '100 взаимодействий/мес',
+        integrations: 'Базовые интеграции',
+        support: 'Email поддержка',
+        cta: 'Начать бесплатно'
+      },
+      business: {
+        title: 'Business',
+        price: '5 000 руб./мес',
+        agents: '5 агентов',
+        interactions: '5000 взаимодействий/мес',
+        integrations: 'Все интеграции',
+        support: 'Приоритетная поддержка',
+        cta: 'Попробовать 14 дней бесплатно'
+      },
+      enterprise: {
+        title: 'Enterprise',
+        price: 'Индивидуально',
+        agents: 'Безлимитные агенты',
+        server: 'Выделенный сервер',
+        sla: 'SLA 99.9%',
+        manager: 'Персональный менеджер',
+        cta: 'Связаться с нами'
+      }
+    },
+
+    faq: {
+      title: 'Частые вопросы',
+      q1: 'Что такое ИИ-агент и как он работает?',
+      a1: 'ИИ-агент — это программа, которая автоматически выполняет задачи, используя искусственный интеллект. Он может общаться с клиентами, обрабатывать запросы, анализировать данные и многое другое.',
+      q2: 'Нужны ли технические знания для создания агента?',
+      a2: 'Нет, наш конструктор позволяет создавать агентов без программирования. Достаточно описать задачу и настроить параметры через визуальный интерфейс.',
+      q3: 'Как быстро можно запустить первого агента?',
+      a3: 'В среднем первый агент запускается за 2-4 часа. Для простых задач может потребоваться всего 30-60 минут.',
+      q4: 'Можно ли интегрировать с моими существующими системами?',
+      a4: 'Да, Integram поддерживает более 50 готовых интеграций с популярными сервисами: CRM, мессенджеры, платежные системы, базы данных и другие.',
+      q5: 'Какая поддержка предоставляется?',
+      a5: 'На бесплатном тарифе — поддержка через email. На платных — приоритетная поддержка с гарантированным временем ответа. На Enterprise — персональный менеджер.',
+      q6: 'Что происходит с данными клиентов?',
+      a6: 'Все данные шифруются и хранятся в соответствии с требованиями безопасности. Мы не передаем данные третьим лицам. Доступны регулярные резервные копии.',
+      q7: 'Можно ли изменить или отменить подписку?',
+      a7: 'Да, вы можете изменить тариф или отменить подписку в любое время. Возврат средств осуществляется пропорционально неиспользованному периоду.',
+      q8: 'Есть ли ограничения на количество запросов?',
+      a8: 'Ограничения зависят от тарифа. На Starter — 100 взаимодействий в месяц, на Business — 5000. На Enterprise ограничений нет.'
+    },
+
+    finalCta: {
+      title: 'Готовы автоматизировать ваш бизнес?',
+      subtitle: 'Создайте первого агента бесплатно. Без кредитной карты. Без обязательств.',
+      cta: 'Начать прямо сейчас',
+      demo: 'Или запланируйте демо с нашим экспертом'
+    }
+  },
+
+  // Customer Support Agent
+  customerSupport: {
+    title: 'Агент поддержки клиентов',
+    subtitle: 'Автоматический чат-бот в Telegram для общения с клиентами, который знает о тарифах, функциях платформы и помогает решать вопросы',
+
+    // Header actions
+    startBot: 'Запустить бота',
+    stopBot: 'Остановить бота',
+    refresh: 'Обновить',
+
+    // Status card
+    statusCard: {
+      title: 'Статус бота',
+      state: 'Состояние',
+      running: 'Работает',
+      stopped: 'Остановлен',
+      uptime: 'Время работы',
+      activeDialogs: 'Активных диалогов',
+      totalCustomers: 'Всего клиентов',
+      categoryDistribution: 'Распределение по категориям'
+    },
+
+    // Categories
+    categories: {
+      general: 'Общий',
+      tariff: 'Тарифы',
+      technical_issue: 'Техническая проблема',
+      feature_inquiry: 'Вопрос о функциях'
+    },
+
+    // Sentiment
+    sentiment: {
+      positive: 'Позитивное',
+      neutral: 'Нейтральное',
+      negative: 'Негативное'
+    },
+
+    // Conversations table
+    conversations: {
+      title: 'Активные диалоги',
+      emptyState: 'Нет активных диалогов',
+      chatId: 'Chat ID',
+      conversationId: 'Conversation ID',
+      customer: 'Клиент',
+      category: 'Категория',
+      sentiment: 'Настроение',
+      lastMessage: 'Последнее сообщение',
+      actions: 'Действия',
+      viewDetails: 'Просмотр деталей',
+      messages: 'Сообщений'
+    },
+
+    // Token management
+    tokenManagement: {
+      title: 'Локальное хранение токенов',
+      description: 'Храните токены локально в браузере для быстрого доступа. Токены шифруются перед сохранением для безопасности.',
+      stats: {
+        total: 'Всего токенов',
+        active: 'Активных',
+        expired: 'Истекших'
+      },
+      savedTokens: 'Сохраненные токены',
+      addToken: 'Добавить токен',
+      addFirstToken: 'Добавить первый токен',
+      noTokens: 'Нет сохраненных токенов',
+      default: 'По умолчанию',
+      expired: 'Истек',
+      created: 'Создан',
+      balance: 'токенов',
+      exportTokens: 'Экспорт токенов',
+      importTokens: 'Импорт токенов',
+      clearAll: 'Очистить все',
+      setDefault: 'Сделать по умолчанию',
+      deleteToken: 'Удалить',
+      editToken: 'Редактировать'
+    },
+
+    // Token form
+    tokenForm: {
+      add: 'Добавить новый токен',
+      edit: 'Редактировать токен',
+      name: 'Название токена',
+      namePlaceholder: 'Мой токен DeepSeek',
+      value: 'Значение токена',
+      valuePlaceholder: 'dd_tok_...',
+      valueHelp: 'Токен будет зашифрован перед сохранением',
+      provider: 'Провайдер',
+      providerPlaceholder: 'Выберите провайдера',
+      model: 'Модель',
+      modelPlaceholder: 'deepseek-chat',
+      balance: 'Баланс токенов',
+      dailyLimit: 'Дневной лимит',
+      monthlyLimit: 'Месячный лимит',
+      useAsDefault: 'Использовать по умолчанию',
+      required: 'обязательно',
+      cancel: 'Отмена',
+      save: 'Сохранить',
+      add: 'Добавить'
+    },
+
+    // Import dialog
+    importDialog: {
+      title: 'Импорт токенов',
+      description: 'Вставьте JSON данные экспортированных токенов:',
+      placeholder: '[{"name": "My Token", "tokenValue": "...", ...}]',
+      help: 'Используйте кнопку "Экспорт токенов" для получения данных в нужном формате',
+      cancel: 'Отмена',
+      import: 'Импортировать'
+    },
+
+    // Configuration
+    configuration: {
+      title: 'Конфигурация бота',
+      telegramSettings: 'Telegram API настройки:',
+      requirements: [
+        'API ID и API Hash должны быть указаны в .env файле',
+        'Необходимо создать сессию через команду node scripts/telegram-auth.js',
+        'Session string также должен быть в .env (TELEGRAM_SESSION)'
+      ],
+      getCredentials: 'Получить API credentials →',
+      features: {
+        title: 'Возможности бота',
+        list: [
+          'Автоматическое общение с клиентами через Telegram',
+          'Отслеживание контекста (тарифы, вопросы, проблемы)',
+          'AI-powered ответы с использованием DeepSeek',
+          'Определение тональности сообщений',
+          'Категоризация запросов (тарифы, технические вопросы, функции)',
+          'История диалогов с каждым клиентом',
+          'Знание о платформе Integram (функции, тарифы, поддержка)',
+          'Локальное хранение токенов для всех пользователей'
+        ]
+      }
+    },
+
+    // Customer details dialog
+    customerDetails: {
+      title: 'Детали клиента',
+      customerId: 'ID клиента:',
+      chatId: 'Chat ID:',
+      category: 'Категория:',
+      sentiment: 'Настроение:',
+      messages: 'Сообщений:',
+      created: 'Создан:',
+      lastMessage: 'Последнее сообщение:',
+      questions: 'Вопросы клиента',
+      issues: 'Технические проблемы',
+      features: 'Интерес к функциям'
+    },
+
+    // Notifications
+    notifications: {
+      botStarted: 'Бот запущен',
+      botStartedMessage: 'Telegram бот поддержки успешно запущен',
+      botStopped: 'Бот остановлен',
+      botStoppedMessage: 'Telegram бот поддержки остановлен',
+      error: 'Ошибка',
+      startError: 'Не удалось запустить бота',
+      stopError: 'Не удалось остановить бота',
+      tokenAdded: 'Токен добавлен',
+      tokenUpdated: 'Токен обновлен',
+      tokenDeleted: 'Токен удален',
+      tokenSetDefault: 'Токен установлен по умолчанию',
+      tokensExported: 'Токены экспортированы',
+      tokensImported: 'Импортировано токенов:',
+      tokensCleared: 'Все токены удалены',
+      tokenError: 'Не удалось сохранить токен',
+      loadError: 'Не удалось загрузить токены',
+      deleteError: 'Не удалось удалить токен',
+      exportError: 'Не удалось экспортировать токены',
+      importError: 'Не удалось импортировать токены',
+      clearError: 'Не удалось очистить токены'
+    },
+
+    // Confirmations
+    confirmations: {
+      deleteToken: {
+        message: 'Вы уверены, что хотите удалить этот токен?',
+        header: 'Подтверждение удаления',
+        accept: 'Удалить',
+        reject: 'Отмена'
+      },
+      clearAll: {
+        message: 'Вы уверены, что хотите удалить ВСЕ сохраненные токены? Это действие необратимо.',
+        header: 'Подтверждение очистки',
+        accept: 'Удалить все',
+        reject: 'Отмена'
+      }
+    }
+  },
+
+  // Lead Qualification Agent
+  leadQualification: {
+    title: 'Агент квалификации лидов',
+    subtitle: 'Автоматическая оценка и приоритизация потенциальных клиентов',
+    addLead: 'Добавить лида',
+    configure: 'Настроить',
+    search: 'Поиск по лидам...',
+    filterByStatus: 'Фильтр по статусу',
+    viewDetails: 'Просмотр деталей',
+    assign: 'Назначить',
+
+    // Statistics
+    stats: {
+      total: 'Всего лидов',
+      hot: 'Горячие',
+      warm: 'Тёплые',
+      cold: 'Холодные'
+    },
+
+    // Status
+    status: {
+      all: 'Все',
+      hot: 'Горячие',
+      warm: 'Тёплые',
+      cold: 'Холодные'
+    },
+
+    // Budget
+    budget: {
+      budgeted: 'Бюджет утвержден',
+      potential: 'Потенциальный бюджет',
+      none: 'Без бюджета'
+    },
+
+    // Urgency
+    urgency: {
+      urgent: 'Срочно',
+      planned: 'Запланировано',
+      exploring: 'Изучает'
+    },
+
+    // Criteria
+    criteria: {
+      budget: 'Бюджет',
+      authority: 'Полномочия',
+      need: 'Потребность',
+      timeline: 'Сроки'
+    },
+
+    // Leads Table
+    leadsTable: {
+      title: 'Лиды',
+      company: 'Компания',
+      score: 'Оценка',
+      category: 'Категория',
+      budget: 'Бюджет',
+      urgency: 'Срочность',
+      assignedTo: 'Назначен',
+      actions: 'Действия'
+    },
+
+    // Add Lead Dialog
+    addLeadDialog: {
+      title: 'Добавить нового лида',
+      companyName: 'Название компании',
+      contactName: 'Контактное лицо',
+      contactEmail: 'Email',
+      contactPhone: 'Телефон',
+      companySize: 'Размер компании',
+      selectSize: 'Выберите размер',
+      budget: 'Бюджет',
+      selectBudget: 'Выберите бюджет',
+      urgency: 'Срочность',
+      selectUrgency: 'Выберите срочность',
+      notes: 'Примечания'
+    },
+
+    // Config Dialog
+    configDialog: {
+      title: 'Настройки агента квалификации',
+      scoring: 'Критерии оценки',
+      routing: 'Правила маршрутизации',
+      integrations: 'Интеграции',
+      routingDescription: 'Настройте автоматическую маршрутизацию лидов на основе их оценки:',
+      condition: 'Условие',
+      assignTo: 'Назначить',
+      integrationsInfo: 'Подключите CRM-системы для синхронизации лидов:',
+      // Routing rules
+      highScoreCondition: 'Оценка > 80',
+      mediumScoreCondition: 'Оценка 60-80',
+      lowScoreCondition: 'Оценка < 60',
+      seniorSalesManager: 'Старший менеджер по продажам',
+      salesManager: 'Менеджер по продажам',
+      juniorSales: 'Младший менеджер'
+    },
+
+    // Integrations
+    integrations: {
+      amocrm: 'Синхронизация лидов с amoCRM',
+      bitrix24: 'Синхронизация лидов с Bitrix24',
+      hubspot: 'Синхронизация лидов с HubSpot'
+    },
+
+    // Success Messages
+    success: {
+      leadAdded: 'Лид успешно добавлен',
+      configSaved: 'Настройки сохранены',
+      assigningLead: 'Назначение'
+    },
+
+    // Error Messages
+    errors: {
+      loadFailed: 'Не удалось загрузить лидов',
+      addFailed: 'Не удалось добавить лида'
+    }
+  },
+
+  // Common locale identifier
+  locale: 'ru',
+
+  // Must-Have Agents ROI Calculator
+  mustHaveAgents: {
+    // Meta and SEO
+    meta: {
+      title: 'Калькулятор ROI AI-агентов - Оценка влияния на бизнес',
+      description: 'Рассчитайте ROI и экономию времени от внедрения AI-агентов. Интерактивный исследовательский инструмент для оценки влияния автоматизации на бизнес.',
+      keywords: 'калькулятор ROI AI-агентов, ROI автоматизации, калькулятор экономии времени, анализ влияния на бизнес, калькулятор продуктивности'
+    },
+
+    // Header
+    header: {
+      badge: 'Калькулятор ROI и исследовательский инструмент',
+      title: 'Рассчитайте ROI ваших AI-агентов',
+      subtitle: 'Оцените влияние внедрения AI-агентов автоматизации на бизнес. Получите персонализированные данные об экономии времени, снижении затрат и росте выручки.',
+      infoText: 'Интерактивный исследовательский инструмент • Расчёты в реальном времени • Аналитика на основе данных'
+    },
+
+    // File Upload and AI Analysis
+    fileUpload: {
+      badge: 'AI-анализ потерь',
+      title: 'Анализ управленческой отчётности',
+      subtitle: 'Загрузите вашу управленческую отчётность в Excel и получите AI-анализ, где ваш бизнес теряет деньги',
+      uploadPrompt: 'Загрузите управленческую отчётность',
+      uploadDescription: 'Перетащите Excel-файл сюда или нажмите для выбора',
+      selectFile: 'Выбрать файл',
+      supportedFormats: 'Поддерживаемые форматы: XLSX, XLS, CSV',
+      rows: 'строк',
+      dataPreview: 'Предпросмотр данных',
+      showingPreview: 'Показаны первые 3 строки и 6 столбцов',
+      analyzeButton: 'Анализировать с помощью AI',
+      analyzing: 'Анализируем...',
+      changeFile: 'Сменить файл',
+      parseError: 'Не удалось прочитать файл. Проверьте формат файла.',
+      noFileError: 'Пожалуйста, сначала загрузите файл',
+      analysisError: 'Ошибка анализа. Попробуйте снова.'
+    },
+
+    // Analysis Results
+    analysis: {
+      title: 'Результаты анализа потерь',
+      summary: 'Резюме',
+      totalLoss: 'Общая оценка потерь',
+      lossAreas: 'Выявленные области потерь',
+      examples: 'Примеры из ваших данных:',
+      recommendations: 'Рекомендации:',
+      priorityActions: 'Приоритетные действия'
+    },
+
+    // Business Parameters
+    businessParams: {
+      title: 'Параметры вашего бизнеса',
+      teamSize: 'Размер команды (сотрудники)',
+      avgHourlyRate: 'Средняя почасовая ставка ($)',
+      leadsPerMonth: 'Лидов в месяц',
+      conversionRate: 'Конверсия (%)',
+      avgDealValue: 'Средний чек ($)',
+      invoicesPerMonth: 'Счетов в месяц'
+    },
+
+    // Agent Selection
+    agentSelection: {
+      title: 'Выберите агентов для оценки'
+    },
+
+    // Agents
+    agents: {
+      leadQualification: {
+        name: 'Агент квалификации лидов',
+        description: 'Автоматическая квалификация и оценка лидов по настраиваемым критериям.'
+      },
+      billingPayment: {
+        name: 'Агент выставления счетов и оплаты',
+        description: 'Автоматизация выставления счетов, обработки платежей и взыскания задолженности.'
+      },
+      qualityFeedback: {
+        name: 'Агент качества и обратной связи',
+        description: 'Сбор, анализ и обработка обратной связи от клиентов.'
+      },
+      monitoringAlerts: {
+        name: 'Агент мониторинга и оповещений',
+        description: 'Мониторинг критических бизнес-метрик и систем.'
+      },
+      salesAutomation: {
+        name: 'Агент автоматизации продаж',
+        description: 'Автоматизация рутинных задач продаж и последующих контактов.'
+      }
+    },
+
+    // ROI Summary
+    roiSummary: {
+      title: 'Итоги ROI',
+      timeSavedYear: 'Сэкономлено времени / Год',
+      hours: 'часов',
+      valueYear: 'Ценность / Год',
+      totalImpact: 'общее влияние',
+      roi: 'ROI',
+      returnOnInvestment: 'возврат инвестиций',
+      paybackPeriod: 'Период окупаемости',
+      timeToROI: 'время до ROI',
+      monthlyCosts: 'Ежемесячные затраты',
+      timeSavingsValue: 'Ценность экономии времени',
+      revenueImpact: 'Влияние на выручку',
+      netMonthlyValue: 'Чистая месячная ценность',
+      month: 'месяц',
+      lessThanMonth: 'Менее 1 месяца'
+    },
+
+    // Key Insights
+    keyInsights: {
+      title: 'Ключевые выводы',
+      productivityBoost: {
+        title: 'Рост продуктивности',
+        description: 'Экономия {hours} часов в неделю, что эквивалентно {percentage}% полного рабочего времени сотрудника'
+      },
+      errorReduction: {
+        title: 'Снижение ошибок',
+        description: 'Среднее снижение на {percentage}% ручных ошибок и ошибок ввода данных'
+      },
+      revenueGrowth: {
+        title: 'Рост выручки',
+        description: 'Потенциально {amount} дополнительной выручки в год за счёт улучшенной конверсии'
+      },
+      costEfficiency: {
+        title: 'Эффективность затрат',
+        description: '{amount} чистой экономии в год после вычета затрат на агентов'
+      }
+    },
+
+    // CTA
+    cta: {
+      title: 'Готовы начать?',
+      description: 'Внедрите этих агентов и начните видеть результаты в течение нескольких дней.',
+      buttonUser: 'Перейти в Dashboard',
+      buttonGuest: 'Войти для продолжения'
+    },
+
+    // Visual Analysis
+    visualAnalysis: {
+      title: 'Визуальный анализ',
+      subtitle: 'Интерактивные графики для понимания влияния и прогнозов ROI.',
+      timeSavingsChart: 'Экономия времени по агентам (Часы/Неделя)',
+      roiChart: 'Прогноз ROI на 12 месяцев',
+      valueBreakdownChart: 'Разбивка месячной ценности',
+      hoursUnit: 'ч',
+      cumulativeSavings: 'Накопительная экономия',
+      cumulativeCosts: 'Накопительные затраты',
+      timeSavingsValueLabel: 'Ценность экономии времени',
+      revenueIncreaseLabel: 'Рост выручки',
+      agentCostsLabel: 'Затраты на агентов'
+    },
+
+    // Agent Details
+    agentDetails: {
+      title: 'Метрики производительности агентов',
+      subtitle: 'Детальная разбивка влияния каждого агента на бизнес-операции.',
+      perMonth: '/мес',
+      timeSaved: 'Сэкономлено времени',
+      hoursPerWeek: 'ч/нед',
+      conversionBoost: 'Рост конверсии',
+      errorReduction: 'Снижение ошибок',
+      additionalMetrics: 'Дополнительные метрики:',
+      metrics: {
+        responseTimeReduction: 'Снижение времени ответа',
+        leadProcessingSpeed: 'Скорость обработки лидов',
+        dataAccuracy: 'Точность данных',
+        paymentCollectionSpeed: 'Скорость сбора платежей',
+        billingAccuracy: 'Точность выставления счетов',
+        latePaymentReduction: 'Снижение просроченных платежей',
+        feedbackCollectionIncrease: 'Рост сбора обратной связи',
+        issueResolutionSpeed: 'Скорость решения проблем',
+        customerSatisfactionIncrease: 'Рост удовлетворённости клиентов',
+        incidentDetectionSpeed: 'Скорость обнаружения инцидентов',
+        downtimeReduction: 'Снижение простоев',
+        falseAlertReduction: 'Снижение ложных оповещений',
+        productivityIncrease: 'Рост продуктивности',
+        dealsClosed: 'Закрытых сделок',
+        followUpRate: 'Уровень последующих контактов'
+      }
+    },
+
+    // Methodology
+    methodology: {
+      title: 'Методология расчётов',
+      subtitle: 'Прозрачный, основанный на данных подход к оценке ROI.',
+      timeSavings: {
+        title: 'Расчёт экономии времени',
+        description: 'На основе измеренной экономии времени от возможностей автоматизации каждого агента:',
+        formula: 'Месячная ценность = (Сэкономленные часы в неделю × 4) × Почасовая ставка'
+      },
+      revenueImpact: {
+        title: 'Расчёт влияния на выручку',
+        description: 'Улучшение конверсии от агентов квалификации лидов и автоматизации продаж:',
+        formula: 'Дополнительная выручка = (Лиды × Улучшенная конверсия × Средний чек) - Текущая выручка'
+      },
+      roi: {
+        title: 'Расчёт ROI',
+        description: 'Возврат инвестиций за 12 месяцев:',
+        formula: 'ROI = ((Годовая чистая экономия) / (Годовые затраты на агентов)) × 100'
+      },
+      disclaimer: 'Примечание: Эти расчёты основаны на средних отраслевых показателях и могут отличаться в зависимости от конкретных условий бизнеса, качества внедрения и паттернов использования. Показанные результаты являются оценочными для исследовательских целей.'
+    }
+  },
+
+  // SmartQ
+  smartq: {
+    title: 'SmartQ - Умные запросы и отчёты',
+    description: 'Интерактивная система для работы с динамическими отчётами и таблицами данных',
+    selectReport: 'Выберите отчёт',
+    reportIdPlaceholder: 'Введите ID отчёта',
+    loadReport: 'Загрузить отчёт',
+    noReportLoaded: 'Отчёт не загружен',
+    enterReportIdToStart: 'Введите ID отчёта, чтобы начать работу',
+    loading: 'Загрузка данных...',
+    search: 'Поиск',
+    addRow: 'Добавить строку',
+    duplicate: 'Дублировать',
+    delete: 'Удалить',
+    actions: 'Действия',
+    of: 'из',
+    retry: 'Повторить',
+    viewRawResponse: 'Показать сырой ответ',
+    filters: 'Фильтры',
+    clearFilters: 'Очистить фильтры',
+    refresh: 'Обновить',
+    noData: 'Нет данных',
+    cancel: 'Отмена',
+
+    // Экспорт
+    exportCSV: 'Экспорт CSV',
+    exportExcel: 'Экспорт Excel',
+    exportHTML: 'Экспорт HTML',
+    copyLink: 'Копировать ссылку',
+    copyLinkTooltip: 'Скопировать ссылку на отчёт',
+    linkCopied: 'Ссылка скопирована',
+    linkCopiedDetail: 'Ссылка на отчёт скопирована в буфер обмена',
+    copyLinkFailed: 'Не удалось скопировать ссылку',
+    export: {
+      noData: 'Нет данных',
+      noDataDetail: 'Нет данных для экспорта',
+      success: 'Экспорт выполнен',
+      csvDownloaded: 'CSV файл загружен',
+      excelDownloaded: 'Excel файл загружен',
+      htmlDownloaded: 'HTML файл загружен',
+      xlsxNotLoaded: 'Библиотека Excel не загружена',
+      xlsxNotLoadedDetail: 'Пожалуйста, обновите страницу и попробуйте снова',
+      failed: 'Ошибка экспорта'
+    },
+
+    // Встроенное редактирование
+    saved: 'Сохранено',
+    cellUpdated: 'Ячейка обновлена',
+    cellUpdatedSuccess: 'Значение ячейки успешно сохранено',
+    saveNewRowToCommit: 'Сохраните всю строку, чтобы зафиксировать изменения в базе данных',
+
+    // Манипуляции со строками
+    rowAdded: 'Строка добавлена',
+    rowAddedDetail: 'Новая строка добавлена. Редактируйте ячейки, они будут сохранены автоматически.',
+    rowDuplicated: 'Строка продублирована',
+    editAndSave: 'Отредактируйте продублированную строку и сохраните изменения',
+    rowRemoved: 'Строка удалена',
+    unsavedRowRemoved: 'Несохранённая строка была удалена',
+    confirmDelete: 'Вы уверены, что хотите удалить эту строку? Это действие нельзя отменить.',
+    deleteRow: 'Удалить строку',
+    deleted: 'Удалено',
+    rowDeletedSuccess: 'Строка успешно удалена',
+
+    // Промежуточные итоги
+    subTotals: {
+      count: 'Количество',
+      sum: 'Сумма',
+      average: 'Среднее',
+      minMax: 'Мин / Макс',
+      clear: 'Очистить выделение'
+    },
+
+    errors: {
+      noReportId: 'Укажите ID отчёта',
+      loadFailed: 'Ошибка загрузки отчёта',
+      saveFailed: 'Не удалось сохранить изменения',
+      deleteFailed: 'Не удалось удалить строку',
+      unknown: 'Неизвестная ошибка'
+    },
+
+    // Навигация
+    nav: {
+      reports: 'Отчёты',
+      viewer: 'Просмотр', // Legacy - для обратной совместимости
+      editor: 'Редактор данных', // Интерактивная таблица с редактированием (legacy "editor")
+      designer: 'Конструктор запросов', // Конструктор запросов (legacy "sql editor")
+      createReport: 'Создать отчёт',
+      browseReports: 'Обзор отчётов'
+    },
+
+    // Список отчётов
+    reports: {
+      list: 'Список отчётов',
+      listDescription: 'Просмотр и управление всеми отчётами',
+      create: 'Создать отчёт',
+      id: 'ID',
+      name: 'Название',
+      actions: 'Действия',
+      view: 'Просмотр',
+      edit: 'Редактировать данные',
+      design: 'Конструктор запросов',
+      clone: 'Клонировать',
+      delete: 'Удалить',
+      noReports: 'Отчёты не найдены',
+      noReportsDescription: 'Начните с создания вашего первого отчёта',
+      createFirst: 'Создать первый отчёт',
+      confirmDelete: 'Вы уверены, что хотите удалить этот отчёт?',
+      confirmDeleteHeader: 'Подтверждение удаления',
+      deleteSuccess: 'Отчёт успешно удалён',
+      deleteFailed: 'Не удалось удалить отчёт',
+      cloneSuccess: 'Отчёт успешно клонирован',
+      cloneFailed: 'Не удалось клонировать отчёт',
+      clonePrompt: 'Введите имя для клонированного отчёта:',
+      cloneDefaultName: 'Копия'
+    },
+
+    // Редактор отчётов
+    editor: {
+      editReport: 'Редактировать отчёт',
+      createReport: 'Создать новый отчёт',
+      description: 'Создание и настройка SmartQ отчётов с SQL запросами',
+      reportName: 'Название отчёта',
+      reportNamePlaceholder: 'Введите название отчёта',
+      sqlQuery: 'SQL запрос',
+      sqlQueryPlaceholder: 'SELECT * FROM ...',
+      sqlQueryHint: 'Введите SQL запрос для генерации данных отчёта',
+      advancedSettings: 'Дополнительные настройки',
+      category: 'Категория',
+      categoryPlaceholder: 'например, Продажи, Аналитика, HR',
+      tags: 'Теги',
+      tagsPlaceholder: 'тег1, тег2, тег3',
+      tagsHint: 'Разделяйте теги запятыми',
+      testQuery: 'Тестировать запрос',
+      updateReport: 'Обновить отчёт',
+      testResults: 'Результаты теста',
+      queryError: 'Ошибка запроса',
+      testingQuery: 'Тестирование запроса',
+      testingQueryMessage: 'Выполнение SQL запроса для проверки синтаксиса и структуры',
+      queryValid: 'Запрос корректен',
+      queryValidMessage: 'Синтаксис SQL запроса корректен',
+      confirmCancel: 'У вас есть несохранённые изменения. Вы уверены, что хотите отменить?',
+      created: 'Отчёт создан',
+      createdMessage: 'Отчёт "{name}" успешно создан',
+      updated: 'Отчёт обновлён',
+      updatedMessage: 'Отчёт "{name}" успешно обновлён',
+      errors: {
+        nameRequired: 'Название отчёта обязательно',
+        sqlQueryRequired: 'SQL запрос обязателен',
+        queryFailed: 'Ошибка тестирования запроса',
+        saveFailed: 'Не удалось сохранить отчёт'
+      },
+      warnings: {
+        noQuery: 'Нет запроса',
+        noQueryMessage: 'Пожалуйста, введите SQL запрос для тестирования',
+        validationFailed: 'Ошибка валидации',
+        validationFailedMessage: 'Пожалуйста, исправьте ошибки перед сохранением'
+      },
+      columnManagement: 'Управление колонками',
+      columns: 'Колонки отчёта',
+      columnsDescription: 'Настройте колонки для отображения в отчёте',
+      columnName: 'Название колонки',
+      columnType: 'Тип данных',
+      addColumn: 'Добавить колонку',
+      removeColumn: 'Удалить колонку',
+      moveUp: 'Переместить вверх',
+      moveDown: 'Переместить вниз',
+      noColumns: 'Колонки не добавлены',
+      columnAdded: 'Колонка добавлена',
+      columnAddedMessage: 'Новая колонка успешно добавлена',
+      columnRemoved: 'Колонка удалена',
+      columnRemovedMessage: 'Колонка "{name}" была удалена',
+      confirmRemoveColumn: 'Вы уверены, что хотите удалить эту колонку?',
+      unnamedColumn: 'Без названия',
+      columnTypes: {
+        SHORT: 'Короткий текст',
+        CHARS: 'Текст',
+        NUMBER: 'Число',
+        DATE: 'Дата',
+        DATETIME: 'Дата и время',
+        BOOLEAN: 'Логический',
+        MEMO: 'Длинный текст',
+        HTML: 'HTML',
+        FILE: 'Файл'
+      }
+    }
+  },
+
+  // Визуальный конструктор запросов
+  queryBuilder: {
+    title: 'Визуальный конструктор запросов',
+    interactive: 'Интерактивный',
+    limit: 'Лимит',
+    addColumn: 'Добавить колонку',
+    addCalculated: 'Добавить вычисляемое поле',
+    addJoin: 'Добавить JOIN',
+    selectTable: 'Выберите таблицу',
+    selectColumn: 'Выберите колонку',
+    columnName: 'Название колонки',
+    filter: 'Фильтр',
+    from: 'От',
+    to: 'До',
+    format: 'Формат',
+    selectFormat: 'Выберите формат',
+    function: 'Функция',
+    selectFunction: 'Выберите функцию',
+    order: 'Порядок',
+    totals: 'Итоги',
+    selectTotals: 'Выберите итог',
+    expression: 'Формула',
+    expressionPlaceholder: 'Введите SQL выражение',
+    having: 'HAVING',
+    actions: 'Действия',
+    moveUp: 'Переместить выше',
+    moveDown: 'Переместить ниже',
+    show: 'Показать колонку',
+    hide: 'Скрыть колонку',
+    removeColumn: 'Удалить колонку',
+    noColumns: 'Колонки не выбраны',
+    noColumnsHint: 'Выберите таблицу и добавьте колонки для построения запроса',
+    sqlPreview: 'Предпросмотр SQL',
+    copySQL: 'Скопировать SQL',
+    executeQuery: 'Выполнить запрос',
+    sqlCopied: 'SQL скопирован в буфер обмена',
+    calculatedColumnAdded: 'Вычисляемая колонка добавлена',
+    joinAdded: 'JOIN успешно добавлен',
+    columnRemoved: 'Колонка удалена',
+    addIdColumn: 'Добавить колонку ID',
+    idColumnAdded: 'Колонка ID добавлена',
+
+    controls: {
+      filter: 'Фильтр',
+      format: 'Формат',
+      function: 'Функция',
+      order: 'Сортировка',
+      totals: 'Итоги',
+      expression: 'Формула',
+      having: 'HAVING',
+      set: 'Присвоить'
+    },
+
+    // SET колонка
+    set: 'Присвоить',
+    setPlaceholder: 'RAND(), IF(...), POWER(...)',
+    setHint: 'Выражение для присвоения значению колонки',
+
+    joinDialog: {
+      title: 'Добавить соединение таблиц (JOIN)',
+      leftTable: 'Присоединить таблицу',
+      alias: 'Псевдоним',
+      aliasPlaceholder: 'Одно короткое слово латиницей',
+      leftField: 'Левое поле',
+      rightField: 'Правое поле',
+      selectField: 'Выберите поле',
+      rightColumn: 'Правая колонка (существующая)'
+    },
+
+    errors: {
+      loadTablesFailed: 'Не удалось загрузить список таблиц',
+      loadColumnsFailed: 'Не удалось загрузить список колонок'
+    }
+  },
+
+  // Управление Workspace
+  workspaces: {
+    // Заголовки и основная информация
+    title: 'Workspaces',
+    subtitle: 'Интеграция с ИИ агентами, modern CLI, управлением файлами и Deep AI',
+    subtitleSuffix: '',
+    yourWorkspaces: 'Workspaces',
+
+    // Badges
+    badges: {
+      aiPowered: 'AI-Powered',
+      loading: 'Загрузка...',
+      unsaved: 'Не сохранено'
+    },
+
+    // Действия с workspace
+    create: 'Создать',
+    createFirst: 'Создать первый workspace',
+    view: 'Просмотр',
+    delete: 'Удалить',
+    refresh: 'Обновить',
+    refreshList: 'Обновить список',
+
+    // Таблица workspace
+    table: {
+      name: 'Название',
+      repository: 'Репозиторий',
+      actions: 'Действия',
+      aiAgent: 'AI Agent',
+      noRepository: 'Без репозитория',
+      openInNewTab: 'Открыть в IDE',
+      copyText: 'Скопировать'
+    },
+
+    // Пустое состояние
+    empty: {
+      title: 'Нет созданных workspace',
+      description: 'Создайте первый workspace для работы с репозиториями, AI агентами и управления файлами'
+    },
+
+    // Диалог создания workspace
+    createDialog: {
+      title: 'Создать Workspace',
+      nameLabel: 'Название workspace',
+      namePlaceholder: 'Например: MyProject',
+      repositoryLabel: 'URL Git репозитория (опционально)',
+      repositoryPlaceholder: 'https://github.com/user/repo.git',
+      repositoryHint: 'Используйте URL репозитория, а не pull request. Пример: https://github.com/user/repo.git',
+      branchLabel: 'Ветка (опционально)',
+      branchPlaceholder: 'main',
+      nameRequired: 'Название workspace обязательно',
+      githubAuthHint: '💡 Для клонирования приватных репозиториев необходима авторизация GitHub.\nПожалуйста, авторизуйтесь через настройки или страницу GitHub.'
+    },
+
+    // Подтверждение удаления
+    deleteConfirm: 'Вы уверены, что хотите удалить workspace "{name}"?',
+    deleteSuccess: 'Workspace удалён',
+    deleteError: 'Ошибка удаления workspace: {error}',
+    createError: 'Ошибка создания workspace',
+    suggestedUrl: 'Попробуйте использовать: {url}',
+
+    // Вкладки workspace
+    tabs: {
+      codeAndAi: 'Code & AI',
+      smartEditor: 'Smart Editor',
+      terminal: 'Терминал',
+      cli: 'CLI',
+      git: 'Git',
+      versionControl: 'Version Control'
+    },
+
+    // Файловый браузер
+    files: {
+      search: 'Поиск файлов...',
+      newFile: 'Новый файл',
+      createFile: 'Создать файл',
+      loading: 'Загрузка файлов...',
+      empty: {
+        title: 'Файлы не найдены',
+        description: 'Создайте новый файл для начала работы'
+      },
+      edit: 'Редактировать',
+      open: 'Открыть',
+      rename: 'Переименовать',
+      delete: 'Удалить',
+      deleteConfirm: 'Вы уверены, что хотите удалить файл "{name}"?',
+      deleteSuccess: 'Файл {name} удалён',
+      deleteError: 'Ошибка удаления файла: {error}'
+    },
+
+    // Редактор файлов
+    editor: {
+      selectFile: 'Выберите файл для редактирования',
+      selectFileDescription: 'Выберите файл из списка слева или создайте новый файл',
+      save: 'Сохранить',
+      close: 'Закрыть',
+      saved: 'Файл {name} успешно сохранён',
+      saveError: 'Ошибка сохранения файла: {error}',
+      unsavedChanges: 'У вас есть несохранённые изменения. Закрыть редактор?',
+
+      // Режимы редактора
+      modes: {
+        view: 'Просмотр файла',
+        edit: 'Редактировать файл',
+        create: 'Создать файл'
+      },
+
+      // Метки полей
+      pathLabel: 'Путь к файлу',
+      pathPlaceholder: 'example/myfile.txt',
+      pathHint: 'Относительный путь от корня workspace',
+      contentLabel: 'Содержимое файла',
+      pathRequired: 'Укажите путь к файлу',
+      readError: 'Ошибка чтения файла: {error}'
+    },
+
+    // AI помощник
+    ai: {
+      assistant: 'AI помощник',
+      chat: 'AI чат',
+      show: 'AI помощник',
+      hide: 'Скрыть AI',
+      closeChat: 'Закрыть AI чат',
+      aiHelper: 'AI Помощник',
+      thinking: 'AI думает...',
+      askAboutFile: 'Спросите AI о файле {file}...',
+      askAboutWorkspace: 'Спросите AI о workspace...',
+
+      // Быстрые действия
+      presetActions: 'Быстрые действия:',
+      optimize: 'Оптимизировать',
+      explain: 'Что делает код',
+      findBugs: 'Найти баги',
+      addComments: 'Добавить комментарии',
+      security: 'Проверить безопасность',
+      refactor: 'Рефакторинг',
+      clearChat: 'Очистить чат',
+      startChat: 'Начните чат с AI',
+      error: 'Ошибка AI',
+      presets: {
+        optimize: 'Оптимизируй код в этом файле, улучши производительность',
+        findBugs: 'Найди потенциальные баги и проблемы в коде',
+        security: 'Проверь код на уязвимости безопасности',
+        explain: 'Объясни, что делает этот код'
+      },
+
+      // AI Assistant Dialog
+      dialog: {
+        title: 'AI Помощник Workspace',
+        description: 'AI-помощник может помочь вам с workspace. Выберите действие или задайте вопрос:',
+        createWorkspace: 'Создать workspace',
+        findCode: 'Найти код в проекте',
+        securityAudit: 'Проверить безопасность кода',
+        optimizePerformance: 'Оптимизировать производительность',
+        explainArchitecture: 'Объяснить архитектуру проекта',
+        askQuestion: 'Или задайте свой вопрос:',
+        questionPlaceholder: 'Например: Помоги мне настроить CI/CD для проекта',
+        askAI: 'Спросить AI',
+
+        // Workspace Agents
+        agents: {
+          title: 'Workspace Агенты',
+          description: 'Запустите агента для автоматического анализа и улучшения кода',
+          analyzer: {
+            name: 'Анализатор кода',
+            description: 'Анализирует структуру и качество кода'
+          },
+          reviewer: {
+            name: 'Code Reviewer',
+            description: 'Проверяет код на соответствие стандартам'
+          },
+          security: {
+            name: 'Сканер безопасности',
+            description: 'Находит уязвимости и проблемы безопасности'
+          },
+          performance: {
+            name: 'Оптимизатор',
+            description: 'Находит узкие места производительности'
+          },
+          watcher: {
+            name: 'File Watcher',
+            description: 'Отслеживает изменения файлов в реальном времени'
+          }
+        }
+      }
+    },
+
+    // Git интеграция
+    git: {
+      repository: 'URL репозитория',
+      repositoryNotSpecified: 'Не указан',
+      branch: 'Ветка',
+      selectBranch: 'Выберите ветку',
+      refreshBranches: 'Обновить ветки',
+      commits: 'Последние коммиты',
+      refreshCommits: 'Обновить коммиты',
+      noCommits: 'Коммиты не найдены',
+      copyCommitSha: 'Копировать SHA',
+      pullChanges: 'Получить последние изменения',
+      loadBranchesError: 'Ошибка загрузки веток: {error}',
+      loadCommitsError: 'Ошибка загрузки коммитов: {error}',
+
+      // Время коммитов
+      justNow: 'только что',
+      minutesAgo: '{count} мин назад',
+      hoursAgo: '{count} ч назад',
+      daysAgo: '{count} дн назад',
+      title: 'Git',
+      sourceControl: 'Контроль версий',
+      staged: 'Подготовлено',
+      changes: 'Изменения',
+      noChanges: 'Нет изменений',
+      pull: 'Pull',
+      push: 'Push',
+      commit: 'Commit',
+      commitChanges: 'Коммит изменений',
+      commitMessage: 'Сообщение коммита',
+      commitPlaceholder: 'Опишите изменения...'
+    },
+
+    // IDE layout keys
+    back: 'Назад',
+    owner: 'Владелец',
+    hideSidebar: 'Скрыть боковую панель',
+    showSidebar: 'Показать боковую панель',
+    layoutSettings: 'Настройки интерфейса',
+    explorer: 'Проводник',
+    newFile: 'Новый файл',
+    newFolder: 'Новая папка',
+    search: 'Поиск',
+    searchPlaceholder: 'Поиск в файлах...',
+    loading: 'Загрузка...',
+    line: 'Строка',
+    column: 'Столбец',
+    welcome: 'Добро пожаловать в IDE',
+    welcomeDescription: 'Выберите файл для редактирования или используйте быстрые клавиши.',
+    quickOpen: 'Быстрое открытие (Ctrl+P)',
+    save: 'Сохранить (Ctrl+S)',
+    toggleTerminal: 'Терминал (Ctrl+`)',
+    closePanel: 'Закрыть панель',
+    noProblems: 'Нет проблем',
+    showBottomPanel: 'Показать нижнюю панель',
+    sidebarWidth: 'Ширина боковой панели',
+    bottomPanelHeight: 'Высота нижней панели',
+    defaultBottomTab: 'Вкладка по умолчанию',
+    resetLayout: 'Сбросить',
+    apply: 'Применить',
+    cancel: 'Отмена',
+    terminal: 'Терминал',
+    problems: 'Проблемы',
+    noFiles: 'Нет файлов',
+    notFound: 'Workspace не найден',
+    goBack: 'Вернуться назад',
+    error: 'Ошибка',
+    loadError: 'Не удалось загрузить workspace',
+    saved: 'Файл сохранён',
+    settingsSaved: 'Настройки сохранены',
+    enterFileName: 'Введите имя файла:',
+    enterFolderName: 'Введите имя папки:',
+
+    // Настройки workspace
+    settings: {
+      title: 'Настройки Workspace',
+      save: 'Сохранить настройки',
+      updated: 'Настройки обновлены'
+    },
+
+    // Агенты workspace
+    agents: {
+      status: {
+        label: 'Статус',
+        notRunning: 'Не запущен',
+        idle: 'Ожидание',
+        watching: 'Наблюдение',
+        analyzing: 'Анализ...',
+        suggesting: 'Предложения',
+        executing: 'Выполнение',
+        waitingApproval: 'Ожидает одобрения',
+        error: 'Ошибка',
+        stopped: 'Остановлен'
+      },
+      agentType: 'Тип агента',
+      workMode: 'Режим работы',
+      start: 'Запустить',
+      stop: 'Остановить',
+      apply: 'Применить',
+      types: {
+        analyzer: 'Анализатор',
+        reviewer: 'Ревьюер',
+        security: 'Безопасность',
+        performance: 'Производительность',
+        fileWatcher: 'Наблюдатель'
+      },
+      autonomy: {
+        supervised: 'Ручной',
+        semiAuto: 'Полуавто',
+        fullAuto: 'Авто'
+      },
+      stats: {
+        files: 'Файлов',
+        suggestions: 'Предложений',
+        applied: 'Применено'
+      },
+      fileChanges: 'Изменения файлов',
+      waitingChanges: 'Ожидание изменений...',
+      fileChange: {
+        add: 'Добавлен',
+        change: 'Изменён',
+        unlink: 'Удалён',
+        addDir: 'Папка создана',
+        unlinkDir: 'Папка удалена'
+      },
+      suggestions: 'Предложения',
+      noProblems: 'Проблем не найдено',
+      emptyState: 'Запустите агента для автоматического анализа кода'
+    },
+
+    // Настройки workspace (inline компонент)
+    settingsInline: {
+      generalInfo: 'Основная информация',
+      workspaceName: 'Название Workspace',
+      workspaceNamePlaceholder: 'Мой проект',
+      description: 'Описание',
+      descriptionPlaceholder: 'Описание workspace',
+      repositoryUrl: 'URL репозитория',
+      repositoryUrlReadonly: 'URL репозитория нельзя изменить после создания',
+
+      themeAppearance: 'Тема и внешний вид',
+      colorTheme: 'Цветовая тема Workspace',
+      colorThemeHint: 'Выберите цвет для идентификации workspace',
+      terminalTheme: 'Тема терминала',
+      selectTerminalTheme: 'Выберите тему терминала',
+      editorTheme: 'Тема редактора',
+      selectEditorTheme: 'Выберите тему редактора',
+      fontSize: 'Размер шрифта',
+      compactMode: 'Компактный режим (уменьшить отступы)',
+
+      aiConfig: 'Конфигурация AI-агента',
+      enableAiAgent: 'Включить AI-агента для workspace',
+      aiModel: 'AI модель с вызовом инструментов',
+      selectAiModel: 'Выберите AI модель',
+      toolCalling: 'Tool Calling',
+      agentCapabilities: 'Возможности агента',
+      capabilities: {
+        fileOps: 'Операции с файлами',
+        gitOps: 'Операции Git',
+        search: 'Поиск',
+        shell: 'Shell команды'
+      },
+
+      advancedSettings: 'Расширенные настройки',
+      autoSave: 'Автосохранение файлов при изменении',
+      autoCommit: 'Автокоммит изменений (требуется Git)',
+      fileWatching: 'Отслеживание файлов',
+      selectFileWatching: 'Выберите режим отслеживания',
+      fileWatchingOptions: {
+        auto: 'Авто (рекомендуется)',
+        enabled: 'Включено',
+        disabled: 'Отключено'
+      },
+
+      saveChanges: 'Сохранить изменения',
+      reset: 'Сбросить',
+      resetConfirm: 'Сбросить все изменения?'
+    },
+
+    // Справка по workspace
+    help: {
+      title: 'Справка по Workspace',
+      subtitle: 'Полное руководство по работе с IDE',
+
+      // Обзор
+      overview: {
+        title: 'Что такое Workspace?',
+        description: 'Workspace — это полноценная облачная IDE с интеграцией ИИ агентов, modern CLI, управлением файлами и Deep AI. Работайте с кодом, запускайте команды на естественном языке и получайте помощь от AI в едином интерфейсе.'
+      },
+
+      // Возможности
+      features: {
+        title: 'Основные возможности',
+        ide: {
+          title: 'Облачная IDE',
+          description: 'Полноценная среда разработки в браузере. Файловый менеджер, редактор с вкладками, терминал, Git и AI — всё в одном месте.'
+        },
+        codeEditor: {
+          title: 'Редактор кода',
+          description: 'Редактор с подсветкой синтаксиса для 50+ языков, автодополнением, поиском и заменой. Поддержка множественных вкладок.'
+        },
+        aiAssistant: {
+          title: 'AI Агент',
+          description: 'Интеллектуальный помощник с поддержкой разных провайдеров моделей. Анализ кода, рефакторинг, генерация, поиск багов и уязвимостей. Понимает контекст проекта.'
+        },
+        terminal: {
+          title: 'AI Терминал',
+          description: 'Выполняйте команды напрямую или включите AI режим — пишите на естественном языке, AI выполнит нужные команды за вас.'
+        },
+        gitIntegration: {
+          title: 'Git & GitHub',
+          description: 'Клонирование репозиториев, просмотр коммитов, переключение веток. OAuth авторизация для приватных репозиториев.'
+        },
+        agents: {
+          title: 'Автономные агенты',
+          description: 'Агенты работают в фоне: анализируют код, находят проблемы, отслеживают изменения и проверяют безопасность. Автоматизация рутинных задач.'
+        }
+      },
+
+      // Разделы интерфейса
+      sections: {
+        title: 'Интерфейс',
+        fileBrowser: {
+          title: 'Файловый браузер',
+          description: 'Дерево файлов с поиском, созданием, переименованием и удалением. Иконки по типу файла. Drag & drop поддержка.'
+        },
+        editor: {
+          title: 'Редактор',
+          description: 'Центральная область с вкладками файлов. Индикатор несохранённых изменений. Автосохранение опционально.'
+        },
+        aiChat: {
+          title: 'AI Чат',
+          description: 'Чат с Deep AI внизу экрана. Отправляйте код на анализ, задавайте вопросы. AI видит контекст открытого файла.'
+        },
+        tabs: {
+          title: 'Вкладки',
+          codeAndAi: 'Code & AI — редактирование файлов с AI-помощником',
+          terminal: 'Терминал — CLI с поддержкой AI режима',
+          git: 'Git — управление репозиторием и настройки'
+        }
+      },
+
+      // Настройки
+      settingsGuide: {
+        title: 'Настройки',
+        location: 'Кнопка настроек в заголовке или вкладка Git → Настройки Workspace.',
+        options: 'Название, репозиторий, ветка, AI агент, автосохранение, тема редактора.'
+      },
+
+      // Быстрые действия
+      quickActions: {
+        title: 'Быстрые AI действия',
+        description: 'Кнопки в AI чате:',
+        optimize: 'Оптимизировать код',
+        findBugs: 'Найти баги',
+        security: 'Аудит безопасности'
+      },
+
+      // Советы
+      tips: {
+        title: 'Советы',
+        tip1: 'Включите AI режим в терминале (кнопка ✨) для команд на естественном языке',
+        tip2: 'Ctrl+S — сохранить файл, Ctrl+W — закрыть вкладку',
+        tip3: 'Выберите файл перед вопросом AI для контекстных ответов',
+        tip4: 'В AI терминале: "создай файл test.js с функцией сортировки"',
+        tip5: 'История команд доступна по кнопке в футере терминала'
+      },
+
+      // Действия
+      close: 'Закрыть',
+      gotIt: 'Понятно!'
+    },
+
+    // Компонент терминала workspace
+    workspaceTerminal: {
+      // Заголовок
+      aiAgentTerminal: 'AI-Терминал агента',
+      modernCliTerminal: 'Терминал',
+      polzaAi: 'Polza AI',
+      unavailable: 'Недоступен',
+      naturalLanguageCommands: 'Команды на естественном языке с AI-выполнением',
+      executeCommandsDesc: 'Выполняйте команды в workspace с подсветкой синтаксиса и историей',
+
+      // Кнопки
+      aiMode: 'Режим AI',
+      enableAi: 'Включить AI',
+      clear: 'Очистить',
+      selectAiModel: 'Выбрать AI модель',
+      aiModeTooltip: 'Включить режим AI: пишите команды на естественном языке, AI выполнит их за вас',
+      aiModeTooltipEnabled: 'Режим AI активен: пишите запросы на естественном языке',
+
+      // Приветственное сообщение
+      welcomeTitle: 'Добро пожаловать в Терминал',
+      welcomeSubtitle: 'Вводите команды для взаимодействия с вашим workspace',
+      supportedCommands: 'Команды: ls, cd, cat, git, npm, run... Введите help для полного списка',
+      tryRunHelp: 'Попробуйте: <code>run --help</code> для выполнения кода на 25+ языках',
+
+      // Выполнение команд
+      executingCommand: 'Выполнение команды...',
+
+      // Ввод команд
+      typeCommandPlaceholder: 'Введите команду и нажмите Enter...',
+
+      // Подвал
+      workingDir: 'Рабочая директория',
+      history: 'История',
+      commandHistory: 'История команд',
+
+      // Диалог истории
+      commandHistoryTitle: 'История команд',
+      noCommandHistory: 'Нет истории команд',
+      clearHistory: 'Очистить историю',
+      commandHistoryCleared: 'История команд очищена',
+
+      // Сообщения режима AI
+      aiModeEnabled: 'Режим AI-агента включен. Теперь вы можете использовать команды на естественном языке!',
+      aiModeDisabled: 'Переключено обратно в обычный режим терминала',
+      aiAgentNotAvailable: 'AI-агент недоступен в этой системе.',
+      aiRequirements: `Требования:
+  • Среда выполнения Bun (https://bun.sh)
+  • Пакет agent_polza2 (backend/monolith/vendor/hives/agent_polza2)
+  • Действительный ключ POLZA_API_KEY в переменных окружения
+
+Пожалуйста, установите необходимые зависимости или используйте обычный режим терминала.`,
+
+      // События AI-агента
+      aiAgentStarting: 'Запуск AI-агента (модель: {model})...',
+      aiAgentCompleted: 'AI-агент завершил работу ({count} событий)',
+      aiAgentError: 'Ошибка AI-агента: {error}',
+      toolUsed: 'Инструмент: {name}',
+
+      // Ошибки команд
+      commandNotAllowed: 'Команда не разрешена',
+      useHelp: 'Введите help для списка доступных команд',
+
+      // Справка по встроенным командам
+      helpTitle: 'Терминал - Доступные команды:',
+      helpFileOps: `Операции с файлами:
+  ls, dir           - Список файлов и каталогов
+  cd <dir>          - Изменить каталог
+  pwd               - Показать текущий каталог
+  cat <file>        - Показать содержимое файла
+  mkdir <dir>       - Создать каталог
+  touch <file>      - Создать пустой файл
+  rm <file>         - Удалить файл
+  mv <src> <dest>   - Переместить/переименовать файл`,
+
+      helpGitOps: `Операции Git:
+  git status        - Показать статус git
+  git log           - Показать историю коммитов
+  git diff          - Показать изменения
+  git add <files>   - Добавить файлы в индекс
+  git commit -m     - Создать коммит
+  git push          - Отправить на удаленный репозиторий
+  git pull          - Получить с удаленного репозитория`,
+
+      helpPackageMgmt: `Управление пакетами:
+  npm install       - Установить npm пакеты
+  npm run <script>  - Запустить npm скрипт
+  pip install       - Установить Python пакеты`,
+
+      helpUniversalRunner: `Универсальный исполнитель кода (25+ языков):
+  run --help        - Показать справку по команде run
+  run --languages   - Список всех поддерживаемых языков
+  run --lang python --code "print('Привет!')"
+  run script.py     - Выполнить файл (автоопределение языка)`,
+
+      helpOther: `Другое:
+  clear, cls        - Очистить терминал
+  help              - Показать это сообщение справки
+  history           - Показать историю команд
+  echo <text>       - Вывести текст
+  neofetch          - Информация о системе и браузере
+  claude <prompt>   - AI ассистент Claude (SSE стриминг)
+
+Используйте стрелки Вверх/Вниз для навигации по истории команд.
+Используйте "run --help" для подробных примеров выполнения кода.`,
+
+      // Описания команд для автодополнения
+      cmds: {
+        ls: 'Список файлов и каталогов',
+        cd: 'Изменить каталог',
+        pwd: 'Текущий каталог',
+        cat: 'Показать содержимое файла',
+        mkdir: 'Создать каталог',
+        touch: 'Создать пустой файл',
+        rm: 'Удалить файл',
+        mv: 'Переместить/переименовать',
+        cp: 'Копировать файл',
+        gitStatus: 'Статус git',
+        gitLog: 'История коммитов',
+        gitDiff: 'Показать изменения',
+        gitAdd: 'Добавить в индекс',
+        gitCommit: 'Создать коммит',
+        gitPush: 'Отправить на сервер',
+        gitPull: 'Получить с сервера',
+        npmInstall: 'Установить пакеты',
+        npmRun: 'Запустить скрипт',
+        npmStart: 'Запустить приложение',
+        npmTest: 'Запустить тесты',
+        runHelp: 'Справка по run',
+        runLanguages: 'Список языков',
+        runPython: 'Выполнить Python код',
+        runJs: 'Выполнить JavaScript код',
+        runRust: 'Выполнить Rust код',
+        clear: 'Очистить терминал',
+        help: 'Показать справку',
+        history: 'История команд',
+        whoami: 'Текущий пользователь',
+        neofetch: 'Информация о системе и браузере',
+        claude: 'AI ассистент Claude (SSE стриминг)'
+      },
+
+      // Claude command translations
+      claudeUsage: 'Использование: claude <ваш запрос>',
+      claudeExample: 'Пример: claude напиши функцию сортировки',
+      claudeNoResponse: 'Нет ответа от Claude',
+
+      // Справка по команде run
+      runHelpTitle: 'Универсальный исполнитель кода - Выполнение кода на 25+ языках',
+      runHelpUsage: `Использование:
+  run [опции] <код-или-файл>`,
+
+      runHelpOptions: `Опции:
+  --lang, -l <язык>     Указать язык программирования
+  --code, -c <код>      Встроенный код для выполнения
+  --languages, --list   Показать все поддерживаемые языки
+  --help, -h            Показать это сообщение справки`,
+
+      runHelpLanguages: `Поддерживаемые языки (25+):
+  Python, JavaScript, TypeScript, Rust, Go, C, C++, Java, C#,
+  Ruby, PHP, Bash, Swift, Kotlin, Lua, Perl, Haskell, Elixir,
+  Julia, R, Dart, Crystal, Groovy, Zig, Nim`,
+
+      runHelpExamples: `Примеры:
+  run --lang python --code "print('Привет из Python!')"
+  run --lang javascript --code "console.log('Привет из JS!')"
+  run --lang rust --code "fn main() { println!(\"Привет из Rust!\"); }"
+  run script.py
+  run program.js
+  run --languages  (показать все поддерживаемые языки)`,
+
+      runHelpAutoDetect: `Автоопределение:
+  При выполнении файла язык автоматически определяется по расширению.`,
+
+      runHelpDocs: `Документация:
+  См. backend/monolith/docs/UNIVERSAL_RUNNER_INTEGRATION.md`,
+
+      // Сообщения об определении языка
+      autoDetectedLanguage: 'Автоопределен язык: {language}',
+      executedWith: 'Выполнено с {language} (код выхода: {code})',
+
+      // Сообщения об ошибках
+      errorMissingCodeOrFile: 'Ошибка: Требуется код или файл. Используйте "run --help" для справки.',
+      errorFetchLanguages: 'Ошибка: Не удалось получить список поддерживаемых языков',
+      errorExecuting: 'Ошибка: {message}',
+
+      // Отображение поддерживаемых языков
+      supportedLanguagesTitle: 'Поддерживаемые языки (всего {total}):',
+      useRunHelp: 'Используйте "run --help" для примеров использования.',
+
+      // Подсказки команд
+      listFiles: 'Список файлов и каталогов',
+      changeDirectory: 'Изменить каталог',
+      printWorkingDir: 'Показать текущий каталог',
+      displayFile: 'Показать содержимое файла',
+      createDir: 'Создать каталог',
+      createFile: 'Создать пустой файл',
+      removeFile: 'Удалить файл',
+      moveRenameFile: 'Переместить/переименовать файл',
+      copyFile: 'Копировать файл',
+      showGitStatus: 'Показать статус git',
+      showCommitHistory: 'Показать историю коммитов',
+      showChanges: 'Показать изменения',
+      stageFiles: 'Добавить файлы в индекс',
+      commitChanges: 'Создать коммит',
+      pushToRemote: 'Отправить на удаленный репозиторий',
+      pullFromRemote: 'Получить с удаленного репозитория',
+      installPackages: 'Установить пакеты',
+      runScript: 'Запустить скрипт',
+      startApp: 'Запустить приложение',
+      runTests: 'Запустить тесты',
+      showRunnerHelp: 'Показать справку по универсальному исполнителю',
+      listSupportedLangs: 'Список поддерживаемых языков',
+      executePythonCode: 'Выполнить Python код',
+      executeJsCode: 'Выполнить JavaScript код',
+      executeRustCode: 'Выполнить Rust код',
+      clearTerminal: 'Очистить терминал',
+      showHelp: 'Показать справку',
+      showHistory: 'Показать историю команд'
+    }
+  },
+
+  // Modern CLI Terminal
+  terminal: {
+    title: 'Modern CLI Terminal',
+    newSession: 'Новая сессия',
+    selectModel: 'Выбрать AI модель',
+    aiAssist: 'AI Помощник',
+    clearScreen: 'Очистить',
+    closeSession: 'Закрыть сессию',
+    sessionId: 'ID сессии',
+    workDir: 'Рабочая директория',
+    status: 'Статус',
+    connected: 'Подключено',
+    disconnected: 'Отключено',
+    noSession: 'Нет активной сессии терминала',
+    clickNewSession: 'Нажмите "Новая сессия" для запуска терминала',
+
+    // AI Assistant
+    aiAssistant: 'AI Помощник команд',
+    aiAssistHelp: 'Попросите AI помощника помочь с командами терминала, объяснениями или решениями.',
+    yourQuestion: 'Ваш вопрос',
+    aiQueryPlaceholder: 'Например: Как найти большие файлы? или Что означает эта ошибка?',
+    askAI: 'Спросить AI',
+    aiThinking: 'AI думает...',
+    aiResponse: 'Ответ AI',
+
+    // Features
+    features: 'Возможности',
+    lightweight: 'Легковесный',
+    lightweightDesc: 'Быстрый и отзывчивый терминал с минимальными накладными расходами',
+    secureIsolation: 'Безопасная изоляция',
+    secureIsolationDesc: 'Каждая сессия работает в изолированном окружении для безопасности',
+    commandFiltering: 'Фильтрация команд',
+    commandFilteringDesc: 'Автоматическая проверка команд для предотвращения потенциально опасных операций',
+    projectDirectory: 'Директория проекта',
+    projectDirectoryDesc: 'Автоматически запускается в директории вашего проекта для удобства',
+    aiAssistantDesc: 'Встроенный AI помощник для помощи с командами и устранением неполадок'
+  },
+
+  // Philosophy Knowledge Graph
+  philosophyGraph: {
+    title: 'Граф знаний: Античная философия',
+    filterBySchool: 'Фильтровать по школе',
+    allSchools: 'Все школы',
+    search: 'Поиск',
+    searchPlaceholder: 'Введите имя философа...',
+    years: 'Годы жизни',
+    school: 'Школа',
+    description: 'Описание',
+    keyIdeas: 'Ключевые идеи',
+    quotes: 'Цитаты',
+    period: 'Период',
+    place: 'Место',
+    mainIdeas: 'Основные идеи'
+  },
+
+  // Philosophy Mind Map
+  philosophyMindMap: {
+    title: 'Ментальная карта: Античная философия',
+    legendRoot: 'Корень (Античная философия)',
+    legendSchool: 'Философская школа',
+    legendPhilosopher: 'Философ'
+  },
+
+  // Philosophy Study Guide
+  philosophyStudyGuide: {
+    title: 'Конспект по античной философии',
+    subtitle: 'Учебные материалы для студентов философского факультета МГУ',
+    downloadMd: 'Скачать MD',
+    downloadDocx: 'Скачать DOCX',
+    methodology: 'Методика изучения',
+    quickReference: 'Быстрая справка: Ключевые философы'
+  }
+}
