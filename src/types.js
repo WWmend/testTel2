@@ -56,3 +56,4 @@ const TYPES = [
 	{ value: 10, label: 'Файл (строка)', icon: 'fa-file' },
 ]
 */
+// scan trigger
