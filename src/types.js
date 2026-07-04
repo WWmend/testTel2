@@ -57,3 +57,4 @@ const TYPES = [
 ]
 */
 // scan trigger
+// scan trigger 2
