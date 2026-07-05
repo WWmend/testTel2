@@ -16,3 +16,5 @@ export default createI18n({
   fallbackLocale: 'en',
   messages
 })
+
+// scan trigger 08b69c1
