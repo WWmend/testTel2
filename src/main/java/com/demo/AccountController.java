@@ -1,7 +1,5 @@
 package com.demo;
 
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -38,17 +36,10 @@ public class AccountController {
         repo.deleteById(id);
     }
 
-    // CWE-319: posts the card number to an http:// endpoint in cleartext.
+    // CWE-319: sends the card number to an http:// endpoint in cleartext (single call).
     @PostMapping("/charge")
-    public void charge(@RequestParam String cardNumber, @RequestParam double amount) throws Exception {
-        URL endpoint = new URL("http://payments-api.local/charge");
-        HttpURLConnection conn = (HttpURLConnection) endpoint.openConnection();
-        conn.setRequestMethod("POST");
-        conn.setDoOutput(true);
-        String body = "card=" + cardNumber + "&amount=" + amount;
-        try (OutputStream os = conn.getOutputStream()) {
-            os.write(body.getBytes(StandardCharsets.UTF_8));
-        }
+    public void charge(@RequestParam String cardNumber) throws Exception {
+        new URL("http://payments-api.local/charge?card=" + cardNumber).openStream();
     }
 
     // CWE-312: writes the user's password to disk in cleartext.
