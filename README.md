@@ -1,0 +1,378 @@
+# Integram Standalone Application
+
+Полностью независимое приложение для работы с Integram, включающее:
+- Авторизацию и регистрацию пользователей
+- Welcome страницу с онбордингом
+- Полный функционал Integram (таблицы, объекты, редакторы)
+- Чаты и коммуникации
+- Меню и навигацию
+
+## 🚀 Первый запуск
+
+### 1. Клонирование
+
+```bash
+git clone https://github.com/unidel2035/integram-standalone.git
+cd integram-standalone
+```
+
+### 2. Установка зависимостей
+
+```bash
+# Frontend
+npm install
+
+# Backend
+cd backend/monolith
+npm install
+cd ../..
+```
+
+### 3. Настройка окружения
+
+```bash
+# Создать .env файлы
+cp .env.example .env
+cp backend/monolith/.env.example backend/monolith/.env
+
+# Отредактировать .env при необходимости
+nano .env
+```
+
+**Минимальная конфигурация для разработки:**
+
+Корневой `.env`:
+```env
+VITE_API_URL=http://localhost:8081
+VITE_WS_URL=ws://localhost:8081
+VITE_INTEGRAM_URL=https://dronedoc.ru
+```
+
+Backend `.env` (`backend/monolith/.env`):
+```env
+PORT=8081
+NODE_ENV=development
+JWT_SECRET=your-development-secret-change-me
+SESSION_SECRET=your-session-secret-change-me
+```
+
+### 4. Запуск в dev режиме
+
+```bash
+# Terminal 1 - Backend
+cd backend/monolith
+npm run dev
+
+# Terminal 2 - Frontend
+npm run dev
+```
+
+Откройте http://localhost:5174
+
+## Установка
+
+### Быстрый старт (рекомендуется)
+
+Для первоначальной настройки проекта используйте автоматический скрипт:
+
+```bash
+# Сделать скрипт исполняемым (если еще не сделано)
+chmod +x setup.sh
+
+# Запустить автоматическую настройку
+./setup.sh
+
+# Или через npm
+npm run setup
+```
+
+Скрипт автоматически:
+- Проверит установленные зависимости (Node.js, npm)
+- Установит зависимости для frontend и backend
+- Создаст `.env` файлы из примеров
+- Проверит корректность структуры проекта
+
+### Ручная установка
+
+```bash
+# Установка зависимостей frontend
+npm install
+
+# Установка зависимостей backend
+cd backend/monolith
+npm install
+cd ../..
+
+# Создание .env файлов
+cp .env.example .env
+cp backend/monolith/.env.example backend/monolith/.env
+
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для production
+npm run build
+
+# Запуск собранного приложения
+npm run preview
+```
+
+## Структура проекта
+
+```
+integram-standalone/
+├── src/
+│   ├── views/
+│   │   ├── pages/
+│   │   │   ├── auth/           # Страницы авторизации
+│   │   │   │   ├── Login.vue
+│   │   │   │   ├── Register.vue
+│   │   │   │   └── OAuthCallback.vue
+│   │   │   ├── Integram/       # Страницы Integram
+│   │   │   │   ├── IntegramLogin.vue
+│   │   │   │   ├── IntegramMain.vue
+│   │   │   │   ├── IntegramLanding.vue
+│   │   │   │   ├── IntegramDictionary.vue
+│   │   │   │   └── ...
+│   │   │   └── Welcome.vue     # Welcome страница
+│   ├── components/
+│   │   ├── chat/              # Компоненты чата
+│   │   ├── integram/          # Компоненты Integram
+│   │   ├── layout/            # Layout компоненты (меню, топбар)
+│   │   ├── onboarding/        # Онбординг
+│   │   └── ensembles/         # Ансамбли
+│   ├── stores/                # Pinia stores
+│   ├── services/              # API сервисы
+│   ├── router/                # Vue Router
+│   ├── assets/                # Статические ресурсы
+│   └── main.js                # Точка входа
+├── backend/
+│   └── monolith/
+│       └── src/
+│           ├── api/routes/    # API маршруты
+│           ├── services/      # Backend сервисы
+│           └── config/        # Конфигурация
+├── public/                    # Публичные файлы
+├── package.json
+├── vite.config.mjs
+└── index.html
+```
+
+## Доступные маршруты
+
+### Авторизация
+- `/login` - Вход в систему
+- `/register` - Регистрация
+- `/oauth/callback` - OAuth callback
+
+### Главные страницы
+- `/welcome` - Welcome страница (требует авторизации)
+
+### Integram
+- `/integram` - Главная страница Integram
+- `/integram/login` - Вход в Integram
+- `/integram/:database` - Работа с конкретной базой данных
+- `/integram/:database/dictionary` - Словарь типов
+- `/integram/:database/objects/:typeId` - Просмотр объектов
+- `/integram/:database/tables` - Список таблиц
+
+## Конфигурация
+
+Создайте файл `.env` на основе `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Настройте переменные окружения:
+- `VITE_API_URL` - URL backend API
+- `VITE_WS_URL` - URL WebSocket сервера
+- `VITE_INTEGRAM_URL` - URL Integram API
+
+## Технологии
+
+- **Frontend**: Vue 3, Vite, Vue Router, Pinia
+- **UI**: PrimeVue 4, PrimeIcons, FontAwesome
+- **Backend**: Node.js, Express
+- **API**: Axios, Socket.io
+
+## 🔧 Troubleshooting
+
+### Build падает с ошибкой PrimeVue CSS
+
+**Ошибка:**
+```
+Rollup failed to resolve import "primevue/resources/themes/aura-light-blue/theme.css"
+```
+
+**Решение:**
+- См. Issue #9
+- PrimeVue 4+ использует встроенную систему тем
+- Не импортируйте CSS темы вручную в `main.js`
+
+### Компоненты Landing не найдены
+
+**Ошибка:**
+```
+Failed to resolve component: LandingHero
+```
+
+**Решение:**
+- См. Issue #8
+- Убедитесь, что все компоненты из `src/components/landing/` присутствуют
+- Проверьте правильность импортов в `IntegramLanding.vue`
+
+### Backend не запускается
+
+**Возможные причины:**
+
+1. **Отсутствуют .env файлы**
+   ```bash
+   cp backend/monolith/.env.example backend/monolith/.env
+   ```
+
+2. **Порт 8081 уже занят**
+   ```bash
+   # Найти процесс на порту 8081
+   lsof -i :8081
+   # Убить процесс
+   kill -9 <PID>
+   # Или измените PORT в .env
+   ```
+
+3. **Отсутствуют обязательные переменные окружения**
+   - Проверьте `JWT_SECRET` и `SESSION_SECRET` в `backend/monolith/.env`
+   - См. Issue #10
+
+4. **Дублирующиеся импорты**
+   - См. Issue #14
+   - Проверьте синтаксис: `node -c backend/monolith/src/index.js`
+
+### Frontend не подключается к Backend
+
+**Проверьте:**
+1. Backend запущен и слушает на порту 8081
+2. В корневом `.env` правильно указан `VITE_API_URL=http://localhost:8081`
+3. Нет CORS ошибок в консоли браузера
+
+### Ошибки при npm install
+
+**Решение:**
+```bash
+# Очистите кэш npm
+npm cache clean --force
+
+# Удалите node_modules и package-lock.json
+rm -rf node_modules package-lock.json
+
+# Переустановите зависимости
+npm install
+```
+
+## Особенности
+
+1. **Полная независимость** - не зависит от основного репозитория dronedoc2025
+2. **Готовая авторизация** - OAuth, Email, Registration
+3. **Integram интеграция** - полный функционал работы с базами данных
+4. **Чаты** - встроенная система коммуникаций
+5. **Адаптивный дизайн** - работает на всех устройствах
+
+## Разработка
+
+### Добавление нового маршрута
+
+1. Создайте компонент в `src/views/pages/`
+2. Добавьте маршрут в `src/router/index-standalone.js`
+3. При необходимости добавьте guard для авторизации
+
+### Добавление нового API endpoint
+
+1. Создайте route в `backend/monolith/src/api/routes/`
+2. Создайте service в `backend/monolith/src/services/`
+3. Подключите в main server file
+
+## 🧪 Тестирование
+
+Проект включает полный набор E2E тестов на Playwright для тестирования функционала работы с таблицами Integram.
+
+### Быстрый старт
+
+```bash
+# Установить Playwright
+npm install
+
+# Установить браузеры
+npx playwright install chromium
+
+# Настроить учетные данные
+cp .env.test.example .env.test
+nano .env.test  # Заполните реальные данные
+
+# Запустить все тесты
+npm test
+
+# Запустить с UI
+npm run test:ui
+```
+
+### Статистика тестов
+
+- **35 тестов** в 5 файлах
+- **100% покрытие** API endpoints
+- **100% покрытие** CRUD операций
+- **5 специализированных фикстур**
+- **Автоматическая очистка** тестовых данных
+
+### Наборы тестов
+
+| Набор | Файл | Тестов | Описание |
+|-------|------|--------|----------|
+| Table Creation | `table-create.spec.js` | 5 | Создание таблиц через UI и API |
+| Column Editing | `table-columns.spec.js` | 6 | Редактирование колонок |
+| Cell Editing | `table-cells.spec.js` | 8 | CRUD операции с ячейками |
+| Subordinate Tables | `table-subordinate.spec.js` | 7 | Иерархия parent-child |
+| Reference Fields | `table-references.spec.js` | 9 | Справочники и lookup таблицы |
+
+### Команды
+
+```bash
+# Все тесты
+npm test
+
+# Тесты с UI
+npm run test:ui
+
+# В браузере (headed режим)
+npm run test:headed
+
+# Отладка
+npm run test:debug
+
+# Посмотреть отчет
+npm run test:report
+
+# Конкретный набор
+npx playwright test table-create.spec.js
+
+# Конкретный тест
+npx playwright test -g "should create table"
+```
+
+### Документация
+
+- 📖 **Подробная документация**: `tests/README.md`
+- 📊 **Отчет о тестировании**: `TEST_REPORT.md`
+- ⚙️ **Конфигурация**: `playwright.config.js`
+
+### Особенности
+
+- ✅ Автоматический запуск dev сервера
+- ✅ Скриншоты при падении тестов
+- ✅ Trace для отладки
+- ✅ Параллельное выполнение
+- ✅ Автоматическая очистка данных
+- ✅ Изоляция тестов
+
+## Лицензия
+
+Proprietary
