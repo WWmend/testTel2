@@ -1,60 +1,32 @@
-# Multi-stage build for Integram Standalone
+FROM docker.io/eclipse-temurin:17-jdk-focal
 
-# Stage 1: Build frontend
-FROM node:20-alpine AS frontend-builder
+RUN useradd -ms /bin/bash webgoat
+RUN chgrp -R 0 /home/webgoat
+RUN chmod -R g=u /home/webgoat
 
-WORKDIR /app
+USER webgoat
 
-# Copy frontend package files
-COPY package*.json ./
-RUN npm ci
+COPY --chown=webgoat target/webgoat-*.jar /home/webgoat/webgoat.jar
 
-# Copy frontend source
-COPY src/ ./src/
-COPY public/ ./public/
-COPY index.html ./
-COPY vite.config.mjs ./
+EXPOSE 8080
+EXPOSE 9090
 
-# Build frontend
-RUN npm run build
-
-# Stage 2: Setup backend
-FROM node:20-alpine AS backend-setup
-
-WORKDIR /app/backend/monolith
-
-# Copy backend package files
-COPY backend/monolith/package*.json ./
-RUN npm ci --only=production
-
-# Stage 3: Final image
-FROM node:20-alpine
-
-WORKDIR /app
-
-# Install dependencies
-RUN apk add --no-cache curl
-
-# Copy backend from setup stage
-COPY --from=backend-setup /app/backend/monolith/node_modules ./backend/monolith/node_modules
-COPY backend/monolith/ ./backend/monolith/
-
-# Copy frontend build from builder stage
-COPY --from=frontend-builder /app/dist ./dist
-
-# Create non-root user
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nodejs -u 1001
-
-# Change ownership
-RUN chown -R nodejs:nodejs /app
-
-USER nodejs
-
-EXPOSE 3000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-  CMD curl -f http://localhost:3000/health || exit 1
-
-CMD ["node", "backend/monolith/src/index.js"]
+WORKDIR /home/webgoat
+ENTRYPOINT [ "java", \
+   "-Duser.home=/home/webgoat", \
+   "-Dfile.encoding=UTF-8", \
+   "--add-opens", "java.base/java.lang=ALL-UNNAMED", \
+   "--add-opens", "java.base/java.util=ALL-UNNAMED", \
+   "--add-opens", "java.base/java.lang.reflect=ALL-UNNAMED", \
+   "--add-opens", "java.base/java.text=ALL-UNNAMED", \
+   "--add-opens", "java.desktop/java.beans=ALL-UNNAMED", \
+   "--add-opens", "java.desktop/java.awt.font=ALL-UNNAMED", \
+   "--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED", \
+   "--add-opens", "java.base/java.io=ALL-UNNAMED", \
+   "--add-opens", "java.base/java.util=ALL-UNNAMED", \
+   "-Drunning.in.docker=true", \
+   "-Dwebgoat.host=0.0.0.0", \
+   "-Dwebwolf.host=0.0.0.0", \
+   "-Dwebgoat.port=8080", \
+   "-Dwebwolf.port=9090", \
+   "-jar", "webgoat.jar" ]

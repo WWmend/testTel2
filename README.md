@@ -1,378 +1,118 @@
-# Integram Standalone Application
+# WebGoat 8: A deliberately insecure Web Application
 
-Полностью независимое приложение для работы с Integram, включающее:
-- Авторизацию и регистрацию пользователей
-- Welcome страницу с онбордингом
-- Полный функционал Integram (таблицы, объекты, редакторы)
-- Чаты и коммуникации
-- Меню и навигацию
+[![Build](https://github.com/WebGoat/WebGoat/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/WebGoat/WebGoat/actions/workflows/build.yml)
+[![java-jdk](https://img.shields.io/badge/java%20jdk-17-green.svg)](https://jdk.java.net/)
+[![OWASP Labs](https://img.shields.io/badge/OWASP-Lab%20project-f7b73c.svg)](https://owasp.org/projects/)
+[![GitHub release](https://img.shields.io/github/release/WebGoat/WebGoat.svg)](https://github.com/WebGoat/WebGoat/releases/latest)
+[![Gitter](https://badges.gitter.im/OWASPWebGoat/community.svg)](https://gitter.im/OWASPWebGoat/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Discussions](https://img.shields.io/github/discussions/WebGoat/WebGoat)](https://github.com/WebGoat/WebGoat/discussions)
 
-## 🚀 Первый запуск
+# Introduction
 
-### 1. Клонирование
+WebGoat is a deliberately insecure web application maintained by [OWASP](http://www.owasp.org/) designed to teach web
+application security lessons.
 
-```bash
-git clone https://github.com/unidel2035/integram-standalone.git
-cd integram-standalone
+This program is a demonstration of common server-side application flaws. The
+exercises are intended to be used by people to learn about application security and
+penetration testing techniques.
+
+**WARNING 1:** *While running this program your machine will be extremely
+vulnerable to attack. You should disconnect from the Internet while using
+this program.*  WebGoat's default configuration binds to localhost to minimize
+the exposure.
+
+**WARNING 2:** *This program is for educational purposes only. If you attempt
+these techniques without authorization, you are very likely to get caught. If
+you are caught engaging in unauthorized hacking, most companies will fire you.
+Claiming that you were doing security research will not work as that is the
+first thing that all hackers claim.*
+
+# Installation instructions:
+
+For more details check [the Contribution guide](/CONTRIBUTING.md)
+
+## 1. Run using Docker
+
+Every release is also published on [DockerHub](https://hub.docker.com/r/webgoat/webgoat).
+
+The easiest way to start WebGoat as a Docker container is to use the all-in-one docker container. This is a docker image that has WebGoat and WebWolf running inside.
+
+```shell
+
+docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 -e TZ=Europe/Amsterdam webgoat/webgoat
 ```
 
-### 2. Установка зависимостей
+**Important**: *Choose the correct timezone, so that the docker container and your host are in the same timezone. As it is important for the validity of JWT tokens used in certain exercises.*
 
-```bash
-# Frontend
-npm install
 
-# Backend
-cd backend/monolith
-npm install
-cd ../..
+## 2. Standalone
+
+Download the latest WebGoat and WebWolf release from [https://github.com/WebGoat/WebGoat/releases](https://github.com/WebGoat/WebGoat/releases)
+
+```shell
+java -Dfile.encoding=UTF-8 -jar webgoat-8.2.3.jar 
 ```
 
-### 3. Настройка окружения
+Click the link in the log to start WebGoat.
 
-```bash
-# Создать .env файлы
-cp .env.example .env
-cp backend/monolith/.env.example backend/monolith/.env
+## 3. Run from the sources
 
-# Отредактировать .env при необходимости
-nano .env
+### Prerequisites:
+
+* Java 17
+* Your favorite IDE
+* Git, or Git support in your IDE
+
+Open a command shell/window:
+
+```Shell
+git clone git@github.com:WebGoat/WebGoat.git
 ```
 
-**Минимальная конфигурация для разработки:**
+Now let's start by compiling the project.
 
-Корневой `.env`:
-```env
-VITE_API_URL=http://localhost:8081
-VITE_WS_URL=ws://localhost:8081
-VITE_INTEGRAM_URL=https://dronedoc.ru
+```Shell
+cd WebGoat
+git checkout <<branch_name>>
+# On Linux/Mac:
+./mvnw clean install 
+
+# On Windows:
+./mvnw.cmd clean install
+
+# Using docker or podman, you can than build the container locally
+docker build -f Dockerfile . -t webgoat/webgoat
 ```
 
-Backend `.env` (`backend/monolith/.env`):
-```env
-PORT=8081
-NODE_ENV=development
-JWT_SECRET=your-development-secret-change-me
-SESSION_SECRET=your-session-secret-change-me
-```
+Now we are ready to run the project. WebGoat 8.x is using Spring-Boot.
 
-### 4. Запуск в dev режиме
-
-```bash
-# Terminal 1 - Backend
-cd backend/monolith
-npm run dev
-
-# Terminal 2 - Frontend
-npm run dev
-```
-
-Откройте http://localhost:5174
-
-## Установка
-
-### Быстрый старт (рекомендуется)
-
-Для первоначальной настройки проекта используйте автоматический скрипт:
-
-```bash
-# Сделать скрипт исполняемым (если еще не сделано)
-chmod +x setup.sh
-
-# Запустить автоматическую настройку
-./setup.sh
-
-# Или через npm
-npm run setup
-```
-
-Скрипт автоматически:
-- Проверит установленные зависимости (Node.js, npm)
-- Установит зависимости для frontend и backend
-- Создаст `.env` файлы из примеров
-- Проверит корректность структуры проекта
-
-### Ручная установка
-
-```bash
-# Установка зависимостей frontend
-npm install
-
-# Установка зависимостей backend
-cd backend/monolith
-npm install
-cd ../..
-
-# Создание .env файлов
-cp .env.example .env
-cp backend/monolith/.env.example backend/monolith/.env
-
-# Запуск в режиме разработки
-npm run dev
-
-# Сборка для production
-npm run build
-
-# Запуск собранного приложения
-npm run preview
-```
-
-## Структура проекта
+```Shell
+# On Linux/Mac:
+./mvnw spring-boot:run
+# On Windows:
+./mvnw.cmd spring-boot:run
 
 ```
-integram-standalone/
-├── src/
-│   ├── views/
-│   │   ├── pages/
-│   │   │   ├── auth/           # Страницы авторизации
-│   │   │   │   ├── Login.vue
-│   │   │   │   ├── Register.vue
-│   │   │   │   └── OAuthCallback.vue
-│   │   │   ├── Integram/       # Страницы Integram
-│   │   │   │   ├── IntegramLogin.vue
-│   │   │   │   ├── IntegramMain.vue
-│   │   │   │   ├── IntegramLanding.vue
-│   │   │   │   ├── IntegramDictionary.vue
-│   │   │   │   └── ...
-│   │   │   └── Welcome.vue     # Welcome страница
-│   ├── components/
-│   │   ├── chat/              # Компоненты чата
-│   │   ├── integram/          # Компоненты Integram
-│   │   ├── layout/            # Layout компоненты (меню, топбар)
-│   │   ├── onboarding/        # Онбординг
-│   │   └── ensembles/         # Ансамбли
-│   ├── stores/                # Pinia stores
-│   ├── services/              # API сервисы
-│   ├── router/                # Vue Router
-│   ├── assets/                # Статические ресурсы
-│   └── main.js                # Точка входа
-├── backend/
-│   └── monolith/
-│       └── src/
-│           ├── api/routes/    # API маршруты
-│           ├── services/      # Backend сервисы
-│           └── config/        # Конфигурация
-├── public/                    # Публичные файлы
-├── package.json
-├── vite.config.mjs
-└── index.html
+... you should be running WebGoat on localhost:8080/WebGoat momentarily
+
+
+To change the IP address add the following variable to the `WebGoat/webgoat-container/src/main/resources/application.properties file`:
+
+```
+server.address=x.x.x.x
 ```
 
-## Доступные маршруты
+## 4. Run with custom menu
 
-### Авторизация
-- `/login` - Вход в систему
-- `/register` - Регистрация
-- `/oauth/callback` - OAuth callback
+For specialist only. There is a way to set up WebGoat with a personalized menu. You can leave out some menu categories or individual lessons by setting certain environment variables.
 
-### Главные страницы
-- `/welcome` - Welcome страница (требует авторизации)
+For instance running as a jar on a Linux/macOS it will look like this:
+```Shell
+export EXCLUDE_CATEGORIES="CLIENT_SIDE,GENERAL,CHALLENGE"
+export EXCLUDE_LESSONS="SqlInjectionAdvanced,SqlInjectionMitigations"
+java -jar target/webgoat-8.2.3-SNAPSHOT.jar
 
-### Integram
-- `/integram` - Главная страница Integram
-- `/integram/login` - Вход в Integram
-- `/integram/:database` - Работа с конкретной базой данных
-- `/integram/:database/dictionary` - Словарь типов
-- `/integram/:database/objects/:typeId` - Просмотр объектов
-- `/integram/:database/tables` - Список таблиц
-
-## Конфигурация
-
-Создайте файл `.env` на основе `.env.example`:
-
-```bash
-cp .env.example .env
+Or in a docker run it would (once this version is pushed into docker hub) look like this:
+```Shell
+docker run -d -p 8080:8080 -p 9090:9090 -e TZ=Europe/Amsterdam -e EXCLUDE_CATEGORIES="CLIENT_SIDE,GENERAL,CHALLENGE" -e EXCLUDE_LESSONS="SqlInjectionAdvanced,SqlInjectionMitigations" webgoat/webgoat
 ```
-
-Настройте переменные окружения:
-- `VITE_API_URL` - URL backend API
-- `VITE_WS_URL` - URL WebSocket сервера
-- `VITE_INTEGRAM_URL` - URL Integram API
-
-## Технологии
-
-- **Frontend**: Vue 3, Vite, Vue Router, Pinia
-- **UI**: PrimeVue 4, PrimeIcons, FontAwesome
-- **Backend**: Node.js, Express
-- **API**: Axios, Socket.io
-
-## 🔧 Troubleshooting
-
-### Build падает с ошибкой PrimeVue CSS
-
-**Ошибка:**
-```
-Rollup failed to resolve import "primevue/resources/themes/aura-light-blue/theme.css"
-```
-
-**Решение:**
-- См. Issue #9
-- PrimeVue 4+ использует встроенную систему тем
-- Не импортируйте CSS темы вручную в `main.js`
-
-### Компоненты Landing не найдены
-
-**Ошибка:**
-```
-Failed to resolve component: LandingHero
-```
-
-**Решение:**
-- См. Issue #8
-- Убедитесь, что все компоненты из `src/components/landing/` присутствуют
-- Проверьте правильность импортов в `IntegramLanding.vue`
-
-### Backend не запускается
-
-**Возможные причины:**
-
-1. **Отсутствуют .env файлы**
-   ```bash
-   cp backend/monolith/.env.example backend/monolith/.env
-   ```
-
-2. **Порт 8081 уже занят**
-   ```bash
-   # Найти процесс на порту 8081
-   lsof -i :8081
-   # Убить процесс
-   kill -9 <PID>
-   # Или измените PORT в .env
-   ```
-
-3. **Отсутствуют обязательные переменные окружения**
-   - Проверьте `JWT_SECRET` и `SESSION_SECRET` в `backend/monolith/.env`
-   - См. Issue #10
-
-4. **Дублирующиеся импорты**
-   - См. Issue #14
-   - Проверьте синтаксис: `node -c backend/monolith/src/index.js`
-
-### Frontend не подключается к Backend
-
-**Проверьте:**
-1. Backend запущен и слушает на порту 8081
-2. В корневом `.env` правильно указан `VITE_API_URL=http://localhost:8081`
-3. Нет CORS ошибок в консоли браузера
-
-### Ошибки при npm install
-
-**Решение:**
-```bash
-# Очистите кэш npm
-npm cache clean --force
-
-# Удалите node_modules и package-lock.json
-rm -rf node_modules package-lock.json
-
-# Переустановите зависимости
-npm install
-```
-
-## Особенности
-
-1. **Полная независимость** - не зависит от основного репозитория dronedoc2025
-2. **Готовая авторизация** - OAuth, Email, Registration
-3. **Integram интеграция** - полный функционал работы с базами данных
-4. **Чаты** - встроенная система коммуникаций
-5. **Адаптивный дизайн** - работает на всех устройствах
-
-## Разработка
-
-### Добавление нового маршрута
-
-1. Создайте компонент в `src/views/pages/`
-2. Добавьте маршрут в `src/router/index-standalone.js`
-3. При необходимости добавьте guard для авторизации
-
-### Добавление нового API endpoint
-
-1. Создайте route в `backend/monolith/src/api/routes/`
-2. Создайте service в `backend/monolith/src/services/`
-3. Подключите в main server file
-
-## 🧪 Тестирование
-
-Проект включает полный набор E2E тестов на Playwright для тестирования функционала работы с таблицами Integram.
-
-### Быстрый старт
-
-```bash
-# Установить Playwright
-npm install
-
-# Установить браузеры
-npx playwright install chromium
-
-# Настроить учетные данные
-cp .env.test.example .env.test
-nano .env.test  # Заполните реальные данные
-
-# Запустить все тесты
-npm test
-
-# Запустить с UI
-npm run test:ui
-```
-
-### Статистика тестов
-
-- **35 тестов** в 5 файлах
-- **100% покрытие** API endpoints
-- **100% покрытие** CRUD операций
-- **5 специализированных фикстур**
-- **Автоматическая очистка** тестовых данных
-
-### Наборы тестов
-
-| Набор | Файл | Тестов | Описание |
-|-------|------|--------|----------|
-| Table Creation | `table-create.spec.js` | 5 | Создание таблиц через UI и API |
-| Column Editing | `table-columns.spec.js` | 6 | Редактирование колонок |
-| Cell Editing | `table-cells.spec.js` | 8 | CRUD операции с ячейками |
-| Subordinate Tables | `table-subordinate.spec.js` | 7 | Иерархия parent-child |
-| Reference Fields | `table-references.spec.js` | 9 | Справочники и lookup таблицы |
-
-### Команды
-
-```bash
-# Все тесты
-npm test
-
-# Тесты с UI
-npm run test:ui
-
-# В браузере (headed режим)
-npm run test:headed
-
-# Отладка
-npm run test:debug
-
-# Посмотреть отчет
-npm run test:report
-
-# Конкретный набор
-npx playwright test table-create.spec.js
-
-# Конкретный тест
-npx playwright test -g "should create table"
-```
-
-### Документация
-
-- 📖 **Подробная документация**: `tests/README.md`
-- 📊 **Отчет о тестировании**: `TEST_REPORT.md`
-- ⚙️ **Конфигурация**: `playwright.config.js`
-
-### Особенности
-
-- ✅ Автоматический запуск dev сервера
-- ✅ Скриншоты при падении тестов
-- ✅ Trace для отладки
-- ✅ Параллельное выполнение
-- ✅ Автоматическая очистка данных
-- ✅ Изоляция тестов
-
-## Лицензия
-
-Proprietary

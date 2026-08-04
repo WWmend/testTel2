@@ -1,55 +1,57 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
+/nb-configuration.xml
+/nbactions.xml
+/target/
+/.classpath
+/.project
+/.settings/.jsdtscope
+/.settings/org.eclipse.jdt.core.prefs
+/.settings/org.eclipse.m2e.core.prefs
+/.settings/org.eclipse.wst.common.component
+/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml
+/.settings/org.eclipse.wst.common.project.facet.core.xml
+/.settings/org.eclipse.wst.jsdt.ui.superType.container
+/.settings/org.eclipse.wst.jsdt.ui.superType.name
+/.settings/org.eclipse.wst.validation.prefs
+/.externalToolBuilders/
+.project
+*/target/*
+*.pmd
+mongo-data/*
+.classpath
+.idea/
+.settings/
+src/main/main.iml
+*.BACKUP.*.jsp
+*.BASE.*.jsp
+*.LOCAL.*.jsp
+*.REMOTE.*.jsp
+src/main/webapp/plugin_extracted/*
+src/main/webapp/users/*.jar
+src/main/webapp/plugin_lessons/*.jar
+src/main/webapp/users/*.props
+classes/*
+*.iml
+pom.xml.versionsBackup
 
-# Testing
-/coverage
-/test-results/
-/playwright-report/
-.env.test
-
-# Production
-/dist
-/build
-
-# Environment
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.log
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Vite
-.vite/
-dist-ssr
-
-# Temporary files
-*.tmp
-*.temp
-
-# Runtime data directories
-backend/monolith/data/
-**/data/secrets/
-**/data/.master_key
-**/session_registry.json
-**/token_registry.json
-# Modern-CLI project directory
-.modern/
+/*.iml
+.extract/*
+UserDatabase.mv.db
+webgoat-container/src/main/webapp/users/guest.org.owasp.webgoat.plugin.*.props
+webgoat-container/src/main/webapp/plugin_lessons/dist-*.pom
+webgoat-lessons/**/target
+**/*.jar
+**/.DS_Store
+webgoat-server/mongo-data/*
+webgoat-lessons/vulnerable-components/dependency-reduced-pom.xml
+**/.sts4-cache/*
+**/.vscode/*
+**/.factorypath
+/.sonatype
+**/bin/*
+webgoat.lck
+webgoat.log
+webgoat.properties
+webgoat.script
+TestClass.class
+**/*.flattened-pom.xml
+/.gitconfig
